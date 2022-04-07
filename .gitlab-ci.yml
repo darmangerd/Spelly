@@ -19,6 +19,8 @@ stages:          # List of stages for jobs, and their order of execution
 #   - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
+  tags:
+    - alpine-docker
   stage: build
   script:
     - g++ main.cpp -o main.o
