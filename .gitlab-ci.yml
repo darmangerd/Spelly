@@ -19,6 +19,7 @@ stages:          # List of stages for jobs, and their order of execution
 #   - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
+  image: gcc
   tags:
     - alpine-docker
   stage: build
