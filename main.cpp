@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Word.h"
 
 using namespace std;
 
@@ -9,6 +10,11 @@ using namespace std;
  * @return
  */
 int main(int argc, char const *argv[]) {
-    cout << "Hello world";
+    Language fr = Language("fr");
+
+    Word w1 = Word("anglais", fr);
+    Word w2 = Word("français", fr);
+
+    cout << w1.getLevenshteinDistance(w2);
     return 0;
 }

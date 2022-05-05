@@ -14,4 +14,4 @@ FetchContent_MakeAvailable(googletest)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-add_executable(spelly main.cpp Word.h WordList.h)
+add_executable(spelly main.cpp Word.h WordList.h Word.cpp WordList.cpp Matrix.cpp Matrix.h Language.cpp Language.h)

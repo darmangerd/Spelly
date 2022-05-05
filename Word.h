@@ -5,24 +5,35 @@
 #pragma once
 
 #include <iostream>
+#include "Language.h"
+
+using namespace std;
 
 class Word {
+private:
+    string content;
+    Language language;
+
 public:
-    Word(std::string content, std::string language);
+    Word(string content, Language language) : content(move(content)), language(move(language)) {}
 
     ~Word();
 
-    std::string getLanguage() const;
+    const Language &getLanguage() const { return this->language; }
 
-    void setLanguage(std::string word);
+    void setLanguage(Language language) { this->language = language; }
 
-    std::string getContent() const;
+    string getContent() const { return this->content; }
 
-    void setContent(std::string word);
+    int getSize() const { return this->content.size(); }
 
-    int getLevenshteinDistance(Word word);
+    void setContent(string content) { this->content = content; }
 
-private:
-    std::string content;
-    std::string language;
+    int getLevenshteinDistance(Word &word);
+
+    int** getLevenshteinMatrix(Word &word);
+
+    friend bool operator==(const Word &left, const Word &right);
+
+    friend bool operator<(const Word &left, const Word &right);
 };

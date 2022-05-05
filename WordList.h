@@ -5,25 +5,27 @@
 #pragma once
 
 #include <iostream>
+#include <set>
 #include "Word.h"
 
+using namespace std;
+
 class WordList {
+private:
+    set<Word> words;
+
 public:
     WordList();
 
     ~WordList();
 
-    void addWord(Word word);
+    unsigned long addWord(Word &word);
 
-    Word *getWords();
+    const vector<Word> &getWords() const;
 
-    bool WordExists(Word word);
+    bool WordExists(Word word) const;
 
-    Word *getNearestWords(Word word, int maxWords);
+    const Word &getNearestWords(Word word, int maxWords) const;
 
-    Word *autoComplete(Word partialWord, int maxWords);
-
-private:
-    std::string *words;
-
+    const Word &autoComplete(Word partialWord, int maxWords) const;
 };
