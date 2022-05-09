@@ -31,7 +31,7 @@ public:
         }
     }
 
-    T get(unsigned int i, unsigned int j) {
+    T get(unsigned int i, unsigned int j) const {
         return this->matrix[i][j];
     }
 
@@ -39,14 +39,14 @@ public:
         this->matrix[i][j] = value;
     }
 
-    string toString() {
+    string toString() const {
         stringstream ss;
 
         ss << "Matrix dimensions: " << this->width << "x" << this->height << endl;
 
-        for (int i = 0; i < this->width; ++i) {
+        for (int i = 0; i < this->height; ++i) {
             for (int j = 0; j < this->width; ++j) {
-                ss << this->matrix[i][j] << " ";
+                ss << this->get(i, j) << " ";
             }
             ss << endl;
         }
@@ -54,8 +54,14 @@ public:
         return ss.str();
     }
 
-    friend ostream &operator<<(ostream &os, const Matrix<T> &matrix) {
-        os << matrix.toString();
-        return os;
-    }
+    template<typename U>
+    friend ostream &operator<<(ostream &os, const Matrix<U> &matrix);
 };
+
+template<typename T>
+ostream &operator<<(ostream &os, const Matrix<T> &matrix) {
+    os << matrix.toString();
+    return os;
+}
+
+

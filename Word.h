@@ -25,13 +25,11 @@ public:
 
     string getContent() const { return this->content; }
 
-    int getSize() const { return this->content.size(); }
+    unsigned int getSize() const { return this->content.size(); }
 
     void setContent(string content) { this->content = content; }
 
-    int getLevenshteinDistance(Word &word);
-
-    int** getLevenshteinMatrix(Word &word);
+    unsigned int getLevenshteinDistance(Word &word);
 
     friend bool operator==(const Word &left, const Word &right);
 

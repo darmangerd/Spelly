@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_word-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Word Class Reference</div></div>
 </div><!--header-->
@@ -71,27 +72,43 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a109308274fc8ca8220c2165a4f7d271a"><td class="memItemLeft" align="right" valign="top"><a id="a109308274fc8ca8220c2165a4f7d271a" name="a109308274fc8ca8220c2165a4f7d271a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Word</b> (std::string content, std::string language)</td></tr>
-<tr class="separator:a109308274fc8ca8220c2165a4f7d271a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f3652c90b475a289979d1910be3d18f"><td class="memItemLeft" align="right" valign="top"><a id="a8f3652c90b475a289979d1910be3d18f" name="a8f3652c90b475a289979d1910be3d18f"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getLanguage</b> () const</td></tr>
-<tr class="separator:a8f3652c90b475a289979d1910be3d18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ce2be89162f25028f3eda6828275728"><td class="memItemLeft" align="right" valign="top"><a id="a5ce2be89162f25028f3eda6828275728" name="a5ce2be89162f25028f3eda6828275728"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setLanguage</b> (std::string word)</td></tr>
-<tr class="separator:a5ce2be89162f25028f3eda6828275728"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56f698f62190ee80de5a5c59cd11345c"><td class="memItemLeft" align="right" valign="top"><a id="a56f698f62190ee80de5a5c59cd11345c" name="a56f698f62190ee80de5a5c59cd11345c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getContent</b> () const</td></tr>
-<tr class="separator:a56f698f62190ee80de5a5c59cd11345c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1e84cce850ecd0b748b01d7608b7859"><td class="memItemLeft" align="right" valign="top"><a id="ac1e84cce850ecd0b748b01d7608b7859" name="ac1e84cce850ecd0b748b01d7608b7859"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setContent</b> (std::string word)</td></tr>
-<tr class="separator:ac1e84cce850ecd0b748b01d7608b7859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ceda1c62acad9d4e4e6263becf6e039"><td class="memItemLeft" align="right" valign="top"><a id="a0ceda1c62acad9d4e4e6263becf6e039" name="a0ceda1c62acad9d4e4e6263becf6e039"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevenshteinDistance</b> (<a class="el" href="class_word.html">Word</a> word)</td></tr>
-<tr class="separator:a0ceda1c62acad9d4e4e6263becf6e039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c49d831bf88e8717240313bca808572"><td class="memItemLeft" align="right" valign="top"><a id="a9c49d831bf88e8717240313bca808572" name="a9c49d831bf88e8717240313bca808572"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Word</b> (string content, <a class="el" href="class_language.html">Language</a> language)</td></tr>
+<tr class="separator:a9c49d831bf88e8717240313bca808572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553fb9b2fb21573c80ab1ec2037dd47d"><td class="memItemLeft" align="right" valign="top"><a id="a553fb9b2fb21573c80ab1ec2037dd47d" name="a553fb9b2fb21573c80ab1ec2037dd47d"></a>
+const <a class="el" href="class_language.html">Language</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getLanguage</b> () const</td></tr>
+<tr class="separator:a553fb9b2fb21573c80ab1ec2037dd47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc70b0643f1d2acab044d7487087f6a"><td class="memItemLeft" align="right" valign="top"><a id="a2cc70b0643f1d2acab044d7487087f6a" name="a2cc70b0643f1d2acab044d7487087f6a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setLanguage</b> (<a class="el" href="class_language.html">Language</a> language)</td></tr>
+<tr class="separator:a2cc70b0643f1d2acab044d7487087f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619e3b9de5fa6f54fc35ac23f1650ce7"><td class="memItemLeft" align="right" valign="top"><a id="a619e3b9de5fa6f54fc35ac23f1650ce7" name="a619e3b9de5fa6f54fc35ac23f1650ce7"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>getContent</b> () const</td></tr>
+<tr class="separator:a619e3b9de5fa6f54fc35ac23f1650ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6721488d7fea5c65ad2c00c9d07ad68"><td class="memItemLeft" align="right" valign="top"><a id="aa6721488d7fea5c65ad2c00c9d07ad68" name="aa6721488d7fea5c65ad2c00c9d07ad68"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getSize</b> () const</td></tr>
+<tr class="separator:aa6721488d7fea5c65ad2c00c9d07ad68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebcbd6993f17615932eb7fd35fb257c9"><td class="memItemLeft" align="right" valign="top"><a id="aebcbd6993f17615932eb7fd35fb257c9" name="aebcbd6993f17615932eb7fd35fb257c9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setContent</b> (string content)</td></tr>
+<tr class="separator:aebcbd6993f17615932eb7fd35fb257c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a348555aa1223599c36913ecefcf108f6"><td class="memItemLeft" align="right" valign="top"><a id="a348555aa1223599c36913ecefcf108f6" name="a348555aa1223599c36913ecefcf108f6"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevenshteinDistance</b> (<a class="el" href="class_word.html">Word</a> &amp;word)</td></tr>
+<tr class="separator:a348555aa1223599c36913ecefcf108f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8261d7f75593fd3c14abe5b6a26a11f"><td class="memItemLeft" align="right" valign="top"><a id="af8261d7f75593fd3c14abe5b6a26a11f" name="af8261d7f75593fd3c14abe5b6a26a11f"></a>
+int **&#160;</td><td class="memItemRight" valign="bottom"><b>getLevenshteinMatrix</b> (<a class="el" href="class_word.html">Word</a> &amp;word)</td></tr>
+<tr class="separator:af8261d7f75593fd3c14abe5b6a26a11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aec3fe7a62cfc55db6c4a87e255e37fe5"><td class="memItemLeft" align="right" valign="top"><a id="aec3fe7a62cfc55db6c4a87e255e37fe5" name="aec3fe7a62cfc55db6c4a87e255e37fe5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_word.html">Word</a> &amp;left, const <a class="el" href="class_word.html">Word</a> &amp;right)</td></tr>
+<tr class="separator:aec3fe7a62cfc55db6c4a87e255e37fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae972845a3e04550cf91ea9bf5572c1e4"><td class="memItemLeft" align="right" valign="top"><a id="ae972845a3e04550cf91ea9bf5572c1e4" name="ae972845a3e04550cf91ea9bf5572c1e4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="class_word.html">Word</a> &amp;left, const <a class="el" href="class_word.html">Word</a> &amp;right)</td></tr>
+<tr class="separator:ae972845a3e04550cf91ea9bf5572c1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_word_8h_source.html">Word.h</a></li>
+<li>Word.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

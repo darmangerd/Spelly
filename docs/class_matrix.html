@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Graph: WordList Class Reference</title>
+<title>Graph: Matrix&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,32 +64,35 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_word_list-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">WordList Class Reference</div></div>
+<a href="#friends">Friends</a> &#124;
+<a href="class_matrix-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Matrix&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aef6b5757aa96689f421df1817c2fd672"><td class="memItemLeft" align="right" valign="top"><a id="aef6b5757aa96689f421df1817c2fd672" name="aef6b5757aa96689f421df1817c2fd672"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>addWord</b> (<a class="el" href="class_word.html">Word</a> &amp;word)</td></tr>
-<tr class="separator:aef6b5757aa96689f421df1817c2fd672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9818a4234b360a7e811d3c04e2bdd17"><td class="memItemLeft" align="right" valign="top"><a id="aa9818a4234b360a7e811d3c04e2bdd17" name="aa9818a4234b360a7e811d3c04e2bdd17"></a>
-const vector&lt; <a class="el" href="class_word.html">Word</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getWords</b> () const</td></tr>
-<tr class="separator:aa9818a4234b360a7e811d3c04e2bdd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4a0f1fac46325a1c36bd16ee97308ad"><td class="memItemLeft" align="right" valign="top"><a id="ab4a0f1fac46325a1c36bd16ee97308ad" name="ab4a0f1fac46325a1c36bd16ee97308ad"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>WordExists</b> (<a class="el" href="class_word.html">Word</a> word) const</td></tr>
-<tr class="separator:ab4a0f1fac46325a1c36bd16ee97308ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d5e67171d6ba75d7004a6e2f0181417"><td class="memItemLeft" align="right" valign="top"><a id="a2d5e67171d6ba75d7004a6e2f0181417" name="a2d5e67171d6ba75d7004a6e2f0181417"></a>
-const <a class="el" href="class_word.html">Word</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNearestWords</b> (<a class="el" href="class_word.html">Word</a> word, int maxWords) const</td></tr>
-<tr class="separator:a2d5e67171d6ba75d7004a6e2f0181417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a867ebec20396329d11580bf51412a358"><td class="memItemLeft" align="right" valign="top"><a id="a867ebec20396329d11580bf51412a358" name="a867ebec20396329d11580bf51412a358"></a>
-const <a class="el" href="class_word.html">Word</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>autoComplete</b> (<a class="el" href="class_word.html">Word</a> partialWord, int maxWords) const</td></tr>
-<tr class="separator:a867ebec20396329d11580bf51412a358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5fb1395956debc3e49a95c3f9a21921"><td class="memItemLeft" align="right" valign="top"><a id="ac5fb1395956debc3e49a95c3f9a21921" name="ac5fb1395956debc3e49a95c3f9a21921"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Matrix</b> (const unsigned int width, const unsigned int height, T defaultValue)</td></tr>
+<tr class="separator:ac5fb1395956debc3e49a95c3f9a21921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ccc4b057e27aa4ab41fb42a6efe0a8"><td class="memItemLeft" align="right" valign="top"><a id="a27ccc4b057e27aa4ab41fb42a6efe0a8" name="a27ccc4b057e27aa4ab41fb42a6efe0a8"></a>
+T&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (unsigned int i, unsigned int j)</td></tr>
+<tr class="separator:a27ccc4b057e27aa4ab41fb42a6efe0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23611f8052262ff8d271fc6760b6828d"><td class="memItemLeft" align="right" valign="top"><a id="a23611f8052262ff8d271fc6760b6828d" name="a23611f8052262ff8d271fc6760b6828d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (unsigned int i, unsigned int j, T value)</td></tr>
+<tr class="separator:a23611f8052262ff8d271fc6760b6828d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af097d64195b0bfa5842d9ee39b448297"><td class="memItemLeft" align="right" valign="top"><a id="af097d64195b0bfa5842d9ee39b448297" name="af097d64195b0bfa5842d9ee39b448297"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
+<tr class="separator:af097d64195b0bfa5842d9ee39b448297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ae59754ee9171019d9d8733fa37813a90"><td class="memItemLeft" align="right" valign="top"><a id="ae59754ee9171019d9d8733fa37813a90" name="ae59754ee9171019d9d8733fa37813a90"></a>
+ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;os, const <a class="el" href="class_matrix.html">Matrix</a>&lt; T &gt; &amp;matrix)</td></tr>
+<tr class="separator:ae59754ee9171019d9d8733fa37813a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_word_list_8h_source.html">WordList.h</a></li>
-<li>WordList.cpp</li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="_matrix_8h_source.html">Matrix.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
