@@ -6,9 +6,14 @@
 
 #include <iostream>
 #include "Word.h"
+#include "TrieNode.h"
+#include <vector>
+
+
 
 class Trie {
 public:
+    TrieNode *root;
     Trie();
     ~Trie();
     bool search(Word word);
