@@ -3,49 +3,64 @@
 //
 
 #include "Trie.h"
-Trie::Trie() {
-    root = new TrieNode();
-}
 
-void Trie::insert(Word word) {
-    TrieNode *current = root;
-    for (int i = 0; i < word.getSize(); i++) {
-        if (current->children[word.getContent()[i]] == nullptr) {
-            current->children[word.getContent()[i]] = new TrieNode();
-        }
-        current = current->children[word.getContent()[i]];
-    }
-}
+Trie::Trie(const string &path) {
+    this->root = new TrieNode<Word *>(nullptr, false);
 
-string* Trie::search(Word word, int length) {
-    TrieNode *current = root;
-    string *result = new string[length];
-    for (int i = 0; i < word.getSize(); i++) {
-        current = current->children[word.getContent()[i]];
+    ifstream infile(path);
+
+    if (!infile) {
+        throw runtime_error("File " + path + " couldn't be opened");
     }
-    searchRecursive(word, length, current, root, result, 0);
-}
-void Trie::searchRecursive(Word word, int length, TrieNode *current, TrieNode *previous, string *result, int index) {
-    if (index == 0) {
-        current = current->children[word.getContent()[index]];
-        searchRecursive(word, length, current, previous, result, index + 1);
-    }
-    else {
-        if(index < length){
-            previous = current;
-            current = current->children[word.getContent()[index]];
-            searchRecursive(word, length, current, previous, result, index + 1);
-        }
-    }
-    if (current->isWord) {
-        result[length] = word.getContent();
-    }
-    for (int i = 0; i < 26; i++) {
-        if (current->children[i] != nullptr) {
-            Word newWord = word;
-            newWord.addLetter(i);
-            searchRecursive(newWord, length + 1, current->children[i], result);
-        }
+
+    string line;
+    unsigned int count = 0;
+    auto l = new Language("fr");
+
+    while (getline(infile, line)) {
+        this->insert(Word(line, l));
+        count++;
     }
 }
 
+void Trie::insert(const Word &word) const {
+    auto current = this->root;
+
+    for (unsigned int i = 0; i < word.getLength(); i++) {
+        int indexInAlphabet = Utils::getIndexInAlphabet(word.getContent()[i]);
+
+        if (current->children[indexInAlphabet] == nullptr) {
+            current->children[indexInAlphabet] = new TrieNode<Word *>(
+                    new Word(word.getContent().substr(0, i + 1), word.getLanguage()),
+                    i == word.getLength() - 1);
+        } else if (i == word.getLength() - 1) {
+            current->children[indexInAlphabet]->isTerminal = true;
+        }
+
+        current = current->children[indexInAlphabet];
+    }
+}
+
+Word *Trie::search(const string &word) const {
+    auto current = this->root;
+
+    for (char i : word) {
+        int indexInAlphabet = Utils::getIndexInAlphabet(i);
+
+        if (current->children[indexInAlphabet] == nullptr) {
+            return nullptr;
+        }
+
+        current = current->children[indexInAlphabet];
+    }
+
+    if (!current->isTerminal) {
+        return nullptr;
+    }
+
+    return current->data;
+}
+
+ostream &operator<<(ostream &os, const Trie &t) {
+    return os;
+}

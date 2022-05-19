@@ -12,20 +12,20 @@ using namespace std;
 class Word {
 private:
     string content;
-    Language language;
+    Language *language;
 
 public:
-    Word(string content, Language language) : content(move(content)), language(move(language)) {}
+    Word(string content, Language *language) : content(move(content)), language(move(language)) {}
 
     ~Word();
 
-    const Language &getLanguage() const { return this->language; }
+    Language *getLanguage() const { return this->language; }
 
-    void setLanguage(Language language) { this->language = language; }
+    void setLanguage(Language *language) { this->language = language; }
 
     string getContent() const { return this->content; }
 
-    unsigned int getSize() const { return this->content.size(); }
+    unsigned int getLength() const { return this->content.size(); }
 
     void setContent(string content) { this->content = content; }
 
@@ -34,4 +34,6 @@ public:
     friend bool operator==(const Word &left, const Word &right);
 
     friend bool operator<(const Word &left, const Word &right);
+
+    friend ostream &operator<<(ostream &os, const Word &t);
 };

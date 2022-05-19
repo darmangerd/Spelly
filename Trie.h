@@ -8,15 +8,18 @@
 #include "Word.h"
 #include "TrieNode.h"
 #include <vector>
-
+#include "Utils.h"
 
 
 class Trie {
 public:
-    TrieNode *root;
-    Trie();
-    ~Trie();
-    string* search(Word word, int maxCost);
-    void searchRecursive(Word word, int length, TrieNode *current, TrieNode *previous, string *result, int index);
-    void insert(Word word);
+    TrieNode<Word *> *root;
+
+    explicit Trie(const string &path);
+
+    void insert(const Word &word) const;
+
+    Word *search(const string &word) const;
+
+    friend ostream &operator<<(ostream &os, const Trie &t);
 };
