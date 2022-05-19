@@ -1,9 +1,7 @@
 //
 // Created by clemsou on 12.05.2022.
 //
-
-#ifndef SPELLY_TRIENODE_H
-#define SPELLY_TRIENODE_H
+#pragma once
 #include <vector>
 #include <string>
 #define ALPHABETS 26
@@ -13,7 +11,4 @@ class TrieNode {
     public:
     TrieNode* parent;
     TrieNode* children[ALPHABETS];
-    string word;
-    vector<int> distance;
 };
-#endif //SPELLY_TRIENODE_H

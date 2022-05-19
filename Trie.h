@@ -16,6 +16,7 @@ public:
     TrieNode *root;
     Trie();
     ~Trie();
-    bool search(Word word);
+    string* search(Word word, int maxCost);
+    void searchRecursive(Word word, int length, TrieNode *current, TrieNode *previous, string *result, int index);
     void insert(Word word);
 };
