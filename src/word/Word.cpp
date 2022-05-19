@@ -3,7 +3,7 @@
 //
 
 #include "Word.h"
-#include "Matrix.h"
+#include "../math/Matrix.h"
 
 Word::~Word() {
 

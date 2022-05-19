@@ -5,10 +5,10 @@
 #pragma once
 
 #include <iostream>
-#include "Word.h"
+#include "../word/Word.h"
 #include "TrieNode.h"
 #include <vector>
-#include "Utils.h"
+#include "../misc/Utils.h"
 
 
 class Trie {

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Graph: Matrix&lt; T &gt; Class Template Reference</title>
+<title>Graph: TrieNode&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,36 +64,35 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
-<a href="class_matrix-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Matrix&lt; T &gt; Class Template Reference</div></div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="class_trie_node-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">TrieNode&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac5fb1395956debc3e49a95c3f9a21921"><td class="memItemLeft" align="right" valign="top"><a id="ac5fb1395956debc3e49a95c3f9a21921" name="ac5fb1395956debc3e49a95c3f9a21921"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Matrix</b> (const unsigned int width, const unsigned int height, T defaultValue)</td></tr>
-<tr class="separator:ac5fb1395956debc3e49a95c3f9a21921"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca5ce3d68331eba42cba5ed469e7df5c"><td class="memItemLeft" align="right" valign="top"><a id="aca5ce3d68331eba42cba5ed469e7df5c" name="aca5ce3d68331eba42cba5ed469e7df5c"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (unsigned int i, unsigned int j) const</td></tr>
-<tr class="separator:aca5ce3d68331eba42cba5ed469e7df5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23611f8052262ff8d271fc6760b6828d"><td class="memItemLeft" align="right" valign="top"><a id="a23611f8052262ff8d271fc6760b6828d" name="a23611f8052262ff8d271fc6760b6828d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (unsigned int i, unsigned int j, T value)</td></tr>
-<tr class="separator:a23611f8052262ff8d271fc6760b6828d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21a38a84287bb9c311eaf5912bcc8110"><td class="memItemLeft" align="right" valign="top"><a id="a21a38a84287bb9c311eaf5912bcc8110" name="a21a38a84287bb9c311eaf5912bcc8110"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> () const</td></tr>
-<tr class="separator:a21a38a84287bb9c311eaf5912bcc8110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5067508ec52ca19bc1c240871025a0e2"><td class="memItemLeft" align="right" valign="top"><a id="a5067508ec52ca19bc1c240871025a0e2" name="a5067508ec52ca19bc1c240871025a0e2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TrieNode</b> (T data, bool isTerminal)</td></tr>
+<tr class="separator:a5067508ec52ca19bc1c240871025a0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:ab57a31f24493a64a5e1da66245d50c58"><td class="memTemplParams" colspan="2"><a id="ab57a31f24493a64a5e1da66245d50c58" name="ab57a31f24493a64a5e1da66245d50c58"></a>
-template&lt;typename U &gt; </td></tr>
-<tr class="memitem:ab57a31f24493a64a5e1da66245d50c58"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;os, const <a class="el" href="class_matrix.html">Matrix</a>&lt; U &gt; &amp;matrix)</td></tr>
-<tr class="separator:ab57a31f24493a64a5e1da66245d50c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a75df51068504a2d3d8ccd0d3be770b66"><td class="memItemLeft" align="right" valign="top"><a id="a75df51068504a2d3d8ccd0d3be770b66" name="a75df51068504a2d3d8ccd0d3be770b66"></a>
+<a class="el" href="class_trie_node.html">TrieNode</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>parent</b></td></tr>
+<tr class="separator:a75df51068504a2d3d8ccd0d3be770b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c640d687d2a52c99028343a01cbe7fe"><td class="memItemLeft" align="right" valign="top"><a id="a7c640d687d2a52c99028343a01cbe7fe" name="a7c640d687d2a52c99028343a01cbe7fe"></a>
+<a class="el" href="class_trie_node.html">TrieNode</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>children</b> [ALPHABET_SIZE]</td></tr>
+<tr class="separator:a7c640d687d2a52c99028343a01cbe7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f640c95358e37780f168a6aaeacf8d4"><td class="memItemLeft" align="right" valign="top"><a id="a9f640c95358e37780f168a6aaeacf8d4" name="a9f640c95358e37780f168a6aaeacf8d4"></a>
+T&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="separator:a9f640c95358e37780f168a6aaeacf8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1451fbbd15c8718c9cbbe9b198775e6"><td class="memItemLeft" align="right" valign="top"><a id="aa1451fbbd15c8718c9cbbe9b198775e6" name="aa1451fbbd15c8718c9cbbe9b198775e6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTerminal</b> {}</td></tr>
+<tr class="separator:aa1451fbbd15c8718c9cbbe9b198775e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_matrix_8h_source.html">Matrix.h</a></li>
+<li><a class="el" href="_trie_node_8h_source.html">TrieNode.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

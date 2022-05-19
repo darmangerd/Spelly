@@ -1,15 +1,9 @@
 #include <iostream>
-#include "Word.h"
-#include "Trie.h"
+#include "word/Word.h"
+#include "trie/Trie.h"
 
 using namespace std;
 
-/**
- * Main program
- * @param argc
- * @param argv
- * @return
- */
 int main(int argc, char const *argv[]) {
     Language fr = Language("fr");
 
@@ -19,7 +13,7 @@ int main(int argc, char const *argv[]) {
     cout << w1.getLevenshteinDistance(w2) << endl;
 
     string search = "owen";
-    Trie t("french.txt");
+    Trie t("french_test.txt");
     auto found = t.search(search);
 
     if (found == nullptr) {
