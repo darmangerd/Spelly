@@ -3,9 +3,14 @@
 //
 
 #include <sstream>
+#include <vector>
+#include <set>
+#include <array>
 #include "Utils.h"
 
-void Utils::readFile(const string &path, void f(const string&, unsigned int)) {
+#define ALPHABET_SIZE 26
+
+void Utils::readFileLineByLine(const string &path, void f(const string &, uint64_t, void *), void *args) {
     ifstream infile(path);
 
     if (!infile) {
@@ -13,25 +18,40 @@ void Utils::readFile(const string &path, void f(const string&, unsigned int)) {
     }
 
     string line;
-    unsigned int count = 0;
+    uint64_t count = 0;
     while (getline(infile, line)) {
-        f(line, count);
+        f(line, count, args);
         count++;
     }
+
+    infile.close();
 }
 
-string Utils::getAlphabet(int max) {
-    stringstream ss;
+void Utils::readFileCharByChar(const string &path, void f(char, uint64_t, void *), void *args) {
+    ifstream infile(path);
 
-    for (int i = 0; i < max; i++) {
-        ss << Utils::getLetterFromAlphabetIndex(i);
-
-        if (i < max - 1) {
-            ss << endl;
-        }
+    if (!infile) {
+        throw runtime_error("File " + path + " couldn't be opened");
     }
 
-    return ss.str();
+    char c = 0;
+    uint64_t count = 0;
+    while (infile.get(c)) {
+        f(c, count, args);
+        count++;
+    }
+
+    infile.close();
+}
+
+array<char, 26> Utils::getAlphabet(int max) {
+    array<char, 26> alphabet{};
+
+    for (int i = 0; i < max; i++) {
+        alphabet[i] = Utils::getLetterFromAlphabetIndex(i);
+    }
+
+    return alphabet;
 }
 
 int Utils::getIndexInAlphabet(char letter) {
@@ -39,5 +59,22 @@ int Utils::getIndexInAlphabet(char letter) {
 }
 
 char Utils::getLetterFromAlphabetIndex(int letterIndex) {
-    return toupper((char) (letterIndex + 'a'));
+    return (char) (letterIndex + 'a');
+}
+
+void addCharToSymbols(char c, uint64_t index, set<char> *symbols) {
+    symbols->insert(tolower(c));
+}
+
+set<char> Utils::extractSymbolsFromFile(const string &path) {
+    set<char> symbols;
+    auto alphabet = Utils::getAlphabet();
+
+    readFileCharByChar(path, reinterpret_cast<void (*)(char, uint64_t, void *)>(addCharToSymbols), &symbols);
+
+    for (char i: alphabet) {
+        symbols.insert(alphabet[i]);
+    }
+
+    return symbols;
 }

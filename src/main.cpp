@@ -1,4 +1,6 @@
 #include <iostream>
+#include <array>
+#include <set>
 #include "word/Word.h"
 #include "trie/Trie.h"
 
@@ -21,6 +23,8 @@ int main(int argc, char const *argv[]) {
     } else {
         cout << *found << endl;
     }
+
+    auto s = Utils::extractSymbolsFromFile("french.txt");
 
     return 0;
 }

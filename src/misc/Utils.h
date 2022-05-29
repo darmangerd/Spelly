@@ -7,19 +7,24 @@
 
 #include <string>
 #include <fstream>
+#include <set>
 
 using namespace std;
 
 class Utils {
 public:
-    void static readFile(const string &path, void (const string &, unsigned int));
+    static void readFileLineByLine(const string &path, void (const string &, uint64_t, void*), void* args);
+
+    static void readFileCharByChar(const string &path, void (char, uint64_t, void*), void* args);
+
+    static set<char> extractSymbolsFromFile(const string &path);
 
     /**
      * Get the alphabet as a string representation
      * @param max The max number of letters
      * @return The alphabet letters
      */
-    static string getAlphabet(int max = 26);
+    static array<char, 26> getAlphabet(int max = 26);
 
     /**
      * Get the index of the letter in the alphabet (begins at 0)
