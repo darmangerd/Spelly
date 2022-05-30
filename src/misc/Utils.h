@@ -17,7 +17,7 @@ public:
 
     static void readFileCharByChar(const string &path, void (char, uint64_t, void*), void* args);
 
-    static set<char> extractSymbolsFromFile(const string &path);
+    static string extractSymbolsFromFile(const string &path);
 
     /**
      * Get the alphabet as a string representation
@@ -36,6 +36,7 @@ public:
      * @return The letter index, it begins at index 0
      */
     static int getIndexInAlphabet(char letter);
+    static int getIndexInAlphabet(char letter, string alphabet);
 
     /**
      * Return the letter (char) that is positioned at a specified index in the alphabet

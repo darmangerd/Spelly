@@ -8,22 +8,41 @@
 #include <vector>
 #include <string>
 
-#define ALPHABET_SIZE 26
 using namespace std;
 
 template<class T>
 class TrieNode {
-public:
-    TrieNode(T data, bool isTerminal) : data(data), isTerminal(isTerminal) {
-        for (int i = 0; i < ALPHABET_SIZE; ++i) {
+private:
+    unsigned int alphabetSize = 26;
+
+    void initChildren() {
+        this->children = new TrieNode<T>* [this->alphabetSize];
+        for (unsigned int i = 0; i < this->alphabetSize; ++i) {
             this->children[i] = nullptr;
         }
     }
 
-    TrieNode() : TrieNode(nullptr, false) {}
+public:
+    TrieNode(T data, bool isTerminal) : data(data), isTerminal(isTerminal) {
+        initChildren();
+    }
+
+    TrieNode(T data, bool isTerminal, unsigned int alphabetSize) : data(data), isTerminal(isTerminal),
+                                                                    alphabetSize(alphabetSize) {
+        initChildren();
+    }
+
+    TrieNode() : TrieNode(nullptr, false, 26) {
+        initChildren();
+    }
+
+    void setAlphabetSize(unsigned int alphabetSize) {
+        this->alphabetSize = alphabetSize;
+        initChildren();
+    }
 
     TrieNode<T> *parent;
-    TrieNode<T> *children[ALPHABET_SIZE];
+    TrieNode<T> **children;
     T data;
-    bool isTerminal{};
+    bool isTerminal = false;
 };

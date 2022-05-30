@@ -6,25 +6,47 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[]) {
-    Language fr = Language("fr");
+Language fr = Language("fr");
+Trie t("french.txt");
 
-    Word w1 = Word("book", &fr);
-    Word w2 = Word("back", &fr);
-
+void levenshteinDistance(const string &word1, const string &word2) {
+    Word w1 = Word(word1, &fr);
+    Word w2 = Word(word2, &fr);
     cout << w1.getLevenshteinDistance(w2) << endl;
+}
 
-    string search = "owen";
-    Trie t("french_test.txt");
-    auto found = t.search(search);
+void searchInTrie(const string &word) {
+    cout << "Searching for \"" << word << "\"..." << endl;
+    auto found = t.search(word);
 
     if (found == nullptr) {
-        cout << "Word \"" << search << "\" not found";
+        cout << "Word \"" << word << "\" not found" << endl;
     } else {
-        cout << *found << endl;
+        cout << "Word \"" << *found << "\" found" << endl;
     }
+}
 
-    auto s = Utils::extractSymbolsFromFile("french.txt");
+void autosuggest(const string &word) {
+    cout << "Autocompleting: \"" << word << "\"..." << endl;
 
-    return 0;
+    unsigned int maxWords = 3;
+    auto suggestions = t.autocomplete(word, maxWords);
+
+    for (unsigned int i = 0; i < maxWords; i++) {
+        if (suggestions[i] != nullptr) {
+            cout << i + 1 << ") " << suggestions[i]->getContent() << endl;
+        } else {
+            cout << "empty suggestion" << endl;
+        }
+    }
+}
+
+int main() {
+    searchInTrie("clément");
+
+    cout << endl;
+
+    autosuggest("clémenc");
+
+    return EXIT_SUCCESS;
 }

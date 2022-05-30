@@ -8,8 +8,6 @@
 #include <array>
 #include "Utils.h"
 
-#define ALPHABET_SIZE 26
-
 void Utils::readFileLineByLine(const string &path, void f(const string &, uint64_t, void *), void *args) {
     ifstream infile(path);
 
@@ -58,23 +56,38 @@ int Utils::getIndexInAlphabet(char letter) {
     return tolower(letter) - 'a';
 }
 
+int Utils::getIndexInAlphabet(char letter, string alphabet) {
+    for (int i = 0; i < alphabet.length(); i++) {
+        if (tolower(alphabet[i]) == tolower(letter)) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 char Utils::getLetterFromAlphabetIndex(int letterIndex) {
     return (char) (letterIndex + 'a');
 }
 
 void addCharToSymbols(char c, uint64_t index, set<char> *symbols) {
-    symbols->insert(tolower(c));
+    if (c != '\n') {
+        symbols->insert(tolower(c));
+    }
 }
 
-set<char> Utils::extractSymbolsFromFile(const string &path) {
+string Utils::extractSymbolsFromFile(const string &path) {
     set<char> symbols;
     auto alphabet = Utils::getAlphabet();
 
     readFileCharByChar(path, reinterpret_cast<void (*)(char, uint64_t, void *)>(addCharToSymbols), &symbols);
 
     for (char i: alphabet) {
-        symbols.insert(alphabet[i]);
+        symbols.insert(i);
     }
 
-    return symbols;
+    string res;
+    for_each(symbols.begin(), symbols.end(), [&res](char c) -> void { res += c; });
+
+    return res;
 }
