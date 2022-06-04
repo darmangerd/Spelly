@@ -9,7 +9,7 @@ Word::~Word() {
 
 }
 
-unsigned int Word::getLevenshteinDistance(Word &word) {
+unsigned int Word::levenshteinDistance(Word &word) {
     auto m = Matrix<unsigned int>(word.content.length() + 1, this->content.length() + 1, 0);
 
     for (unsigned int i = 1; i < this->getLength() + 1; ++i) {
@@ -55,7 +55,12 @@ bool operator<(const Word &left, const Word &right) {
 }
 
 ostream &operator<<(ostream &os, const Word &w) {
-    os << w.getContent() << " (" << w.getLanguage()->getName() << ")";
+    os << w.getContent();
+
+    if (w.getLanguage() != nullptr) {
+        os << " (" << w.getLanguage()->getName() << ")";
+    }
+
     return os;
 }
 

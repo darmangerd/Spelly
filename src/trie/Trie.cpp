@@ -2,26 +2,14 @@
 // Created by owen on 09.05.22.
 //
 
+#include <utility>
 #include "Trie.h"
 
-Trie::Trie(const string &path) {
-    this->alphabet = Utils::extractSymbolsFromFile(path);
-
+Trie::Trie(string alphabet, const vector<Word *> &words) : alphabet(std::move(alphabet)) {
     this->root = new TrieNode<Word *>(nullptr, false, this->alphabet.length());
 
-    ifstream infile(path);
-
-    if (!infile) {
-        throw runtime_error("File " + path + " couldn't be opened");
-    }
-
-    string line;
-    unsigned int count = 0;
-    auto l = new Language("fr");
-
-    while (getline(infile, line)) {
-        this->insert(Word(line, l));
-        count++;
+    for (auto word: words) {
+        this->insert(*word);
     }
 }
 

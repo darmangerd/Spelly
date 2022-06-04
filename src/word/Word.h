@@ -5,6 +5,7 @@
 #pragma once
 
 #include <iostream>
+#include <utility>
 #include "Language.h"
 
 using namespace std;
@@ -15,7 +16,9 @@ private:
     Language *language;
 
 public:
-    Word(string content, Language *language) : content(move(content)), language(move(language)) {}
+    explicit Word(string content, Language *language) : content(std::move(content)), language(language) {}
+
+    explicit Word(string content) : Word(std::move(content), nullptr) {}
 
     ~Word();
 
@@ -29,7 +32,7 @@ public:
 
     void setContent(string content) { this->content = content; }
 
-    unsigned int getLevenshteinDistance(Word &word);
+    unsigned int levenshteinDistance(Word &word);
 
     friend bool operator==(const Word &left, const Word &right);
 

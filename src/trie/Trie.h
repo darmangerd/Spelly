@@ -22,7 +22,7 @@ private:
                                unsigned int &depth, unsigned int maxDepth) const;
 
 public:
-    explicit Trie(const string &path);
+    explicit Trie(string alphabet, const vector<Word *> &words);
 
     void insert(const Word &word) const;
 
