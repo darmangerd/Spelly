@@ -84,6 +84,14 @@ public:
         b = tmp;
     }
 
+    /**
+     * Create a slice of a vector from a original one, starting from an index and ending at an another one
+     * @tparam T The type of the elements in the vector
+     * @param v The original vector
+     * @param start The starting index
+     * @param end The ending index
+     * @return The sliced vector
+     */
     template<class T>
     static vector<T> createVectorSlice(vector<T> v, unsigned int start, unsigned int end) {
         vector<T> vSlice(end - start);
