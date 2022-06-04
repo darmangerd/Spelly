@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['language_0',['Language',['../class_language.html',1,'']]]
+  ['correction_0',['Correction',['../class_correction.html',1,'']]]
 ];

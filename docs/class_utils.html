@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Graph: Utils Class Reference</title>
+<title>Spelly: Utils Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Graph
+   <div id="projectname">Spelly
    </div>
   </td>
  </tr>
@@ -71,19 +71,151 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1146ac994e94d6dba4cdd776b56fe8df"><td class="memItemLeft" align="right" valign="top"><a id="a1146ac994e94d6dba4cdd776b56fe8df" name="a1146ac994e94d6dba4cdd776b56fe8df"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>readFileLineByLine</b> (const string &amp;path, void(const string &amp;, unsigned int))</td></tr>
-<tr class="separator:a1146ac994e94d6dba4cdd776b56fe8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a320afe4376a3d5b000e24ab2c4539260"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils.html#a320afe4376a3d5b000e24ab2c4539260">getAlphabet</a> (int max=26)</td></tr>
-<tr class="separator:a320afe4376a3d5b000e24ab2c4539260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9426341258b37f103ba876e0acc8d5b7"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a9426341258b37f103ba876e0acc8d5b7"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a9426341258b37f103ba876e0acc8d5b7">readFileLineByLine</a> (const string &amp;path, F &amp;f)</td></tr>
+<tr class="separator:a9426341258b37f103ba876e0acc8d5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128dce1df61d97ddb059a30eefe0792b"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a128dce1df61d97ddb059a30eefe0792b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a128dce1df61d97ddb059a30eefe0792b">readFileCharByChar</a> (const string &amp;path, F &amp;f)</td></tr>
+<tr class="separator:a128dce1df61d97ddb059a30eefe0792b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48438467c86db627278b48b61625d405"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a48438467c86db627278b48b61625d405"><td class="memTemplItemLeft" align="right" valign="top">static T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a48438467c86db627278b48b61625d405">initArray</a> (T default_value, unsigned int size)</td></tr>
+<tr class="separator:a48438467c86db627278b48b61625d405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39cf5e0255c92369aa04b2321f743ad"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ac39cf5e0255c92369aa04b2321f743ad"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#ac39cf5e0255c92369aa04b2321f743ad">swap</a> (T &amp;a, T &amp;b)</td></tr>
+<tr class="separator:ac39cf5e0255c92369aa04b2321f743ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485677499de7e96cc2d189537a4914d7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a485677499de7e96cc2d189537a4914d7"><td class="memTemplItemLeft" align="right" valign="top">static vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">createVectorSlice</a> (vector&lt; T &gt; v, unsigned int start, unsigned int end)</td></tr>
+<tr class="separator:a485677499de7e96cc2d189537a4914d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aed991cfeb0c8d00c7bf6db51c48e99"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1aed991cfeb0c8d00c7bf6db51c48e99"><td class="memTemplItemLeft" align="right" valign="top">static vector&lt; T &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a1aed991cfeb0c8d00c7bf6db51c48e99">createChunks</a> (vector&lt; T &gt; v, unsigned int numberOfChunks)</td></tr>
+<tr class="separator:a1aed991cfeb0c8d00c7bf6db51c48e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787c73353e70ada774de68cf461d6c66"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils.html#a787c73353e70ada774de68cf461d6c66">extractSymbolsFromFile</a> (const string &amp;path)</td></tr>
+<tr class="separator:a787c73353e70ada774de68cf461d6c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a3d73328eafb0cca17cf73e75e0448"><td class="memItemLeft" align="right" valign="top">static array&lt; char, 26 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils.html#a84a3d73328eafb0cca17cf73e75e0448">getAlphabet</a> (int max=26)</td></tr>
+<tr class="separator:a84a3d73328eafb0cca17cf73e75e0448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa33461c1ae807992384625903cde3a46"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils.html#aa33461c1ae807992384625903cde3a46">getIndexInAlphabet</a> (char letter)</td></tr>
 <tr class="separator:aa33461c1ae807992384625903cde3a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5bab2ae565829cbdfd2b0bd9081a105"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils.html#aa5bab2ae565829cbdfd2b0bd9081a105">getIndexInAlphabet</a> (char letter, string alphabet)</td></tr>
+<tr class="separator:aa5bab2ae565829cbdfd2b0bd9081a105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc6ca4d23cebdf98a46ebc05f7fa7143"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils.html#abc6ca4d23cebdf98a46ebc05f7fa7143">getLetterFromAlphabetIndex</a> (int letterIndex)</td></tr>
 <tr class="separator:abc6ca4d23cebdf98a46ebc05f7fa7143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d7a01afb08f9d347e7269e8dceb00db"><td class="memItemLeft" align="right" valign="top">static ifstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db">openFile</a> (const string &amp;path)</td></tr>
+<tr class="separator:a8d7a01afb08f9d347e7269e8dceb00db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a320afe4376a3d5b000e24ab2c4539260" name="a320afe4376a3d5b000e24ab2c4539260"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a320afe4376a3d5b000e24ab2c4539260">&#9670;&nbsp;</a></span>getAlphabet()</h2>
+<a id="a1aed991cfeb0c8d00c7bf6db51c48e99" name="a1aed991cfeb0c8d00c7bf6db51c48e99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aed991cfeb0c8d00c7bf6db51c48e99">&#9670;&nbsp;</a></span>createChunks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static vector&lt; T &gt; * Utils::createChunks </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>numberOfChunks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Divide a vector into &lt;numberOfChunks&gt; smaller vectors </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>The vector to divide </td></tr>
+    <tr><td class="paramname">numberOfChunks</td><td>The number of desires smaller vectors </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The &lt;numberOfChunks&gt; smaller vectors </dd></dl>
+
+</div>
+</div>
+<a id="a485677499de7e96cc2d189537a4914d7" name="a485677499de7e96cc2d189537a4914d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a485677499de7e96cc2d189537a4914d7">&#9670;&nbsp;</a></span>createVectorSlice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static vector&lt; T &gt; Utils::createVectorSlice </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Create a slice of a vector from a original one, starting from an index and ending at an another one </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>The original vector </td></tr>
+    <tr><td class="paramname">start</td><td>The starting index </td></tr>
+    <tr><td class="paramname">end</td><td>The ending index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sliced vector </dd></dl>
+
+</div>
+</div>
+<a id="a787c73353e70ada774de68cf461d6c66" name="a787c73353e70ada774de68cf461d6c66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787c73353e70ada774de68cf461d6c66">&#9670;&nbsp;</a></span>extractSymbolsFromFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -92,7 +224,40 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>readFileLineBy
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Utils::getAlphabet </td>
+          <td class="memname">string Utils::extractSymbolsFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Extract all the different symbols from a file </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The file path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The different symbols that are present in the file as a string </dd></dl>
+
+</div>
+</div>
+<a id="a84a3d73328eafb0cca17cf73e75e0448" name="a84a3d73328eafb0cca17cf73e75e0448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a3d73328eafb0cca17cf73e75e0448">&#9670;&nbsp;</a></span>getAlphabet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">array&lt; char, 26 &gt; Utils::getAlphabet </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>max</em> = <code>26</code></td><td>)</td>
@@ -116,7 +281,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>readFileLineBy
 </div>
 </div>
 <a id="aa33461c1ae807992384625903cde3a46" name="aa33461c1ae807992384625903cde3a46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa33461c1ae807992384625903cde3a46">&#9670;&nbsp;</a></span>getIndexInAlphabet()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa33461c1ae807992384625903cde3a46">&#9670;&nbsp;</a></span>getIndexInAlphabet() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +305,51 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>readFileLineBy
 </div><div class="memdoc">
 <p >Get the index of the letter in the alphabet (begins at 0) A =&gt; 0 B =&gt; 1 C =&gt; 2 ... </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">letter</td><td></td></tr>
+    <tr><td class="paramname">letter</td><td>The letter to findCandidates </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The letter index, it begins at index 0 </dd></dl>
+
+</div>
+</div>
+<a id="aa5bab2ae565829cbdfd2b0bd9081a105" name="aa5bab2ae565829cbdfd2b0bd9081a105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5bab2ae565829cbdfd2b0bd9081a105">&#9670;&nbsp;</a></span>getIndexInAlphabet() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Utils::getIndexInAlphabet </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>letter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>alphabet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Get the index of the letter in a custom alphabet (begins at 0) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">letter</td><td>The letter to findCandidates </td></tr>
+    <tr><td class="paramname">alphabet</td><td>The custom alphabet as a string </td></tr>
   </table>
   </dd>
 </dl>
@@ -181,9 +390,247 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>readFileLineBy
 
 </div>
 </div>
+<a id="a48438467c86db627278b48b61625d405" name="a48438467c86db627278b48b61625d405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48438467c86db627278b48b61625d405">&#9670;&nbsp;</a></span>initArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T * Utils::initArray </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>default_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Init an array of type T with a default value for each element </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The array type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">default_value</td><td>The default value </td></tr>
+    <tr><td class="paramname">size</td><td>The array size </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The array of type T with the specified size filled with the default value </dd></dl>
+
+</div>
+</div>
+<a id="a8d7a01afb08f9d347e7269e8dceb00db" name="a8d7a01afb08f9d347e7269e8dceb00db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d7a01afb08f9d347e7269e8dceb00db">&#9670;&nbsp;</a></span>openFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ifstream Utils::openFile </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Try to open a file from the file system </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The file path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An ifstream of the file </dd></dl>
+
+</div>
+</div>
+<a id="a128dce1df61d97ddb059a30eefe0792b" name="a128dce1df61d97ddb059a30eefe0792b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a128dce1df61d97ddb059a30eefe0792b">&#9670;&nbsp;</a></span>readFileCharByChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Utils::readFileCharByChar </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Read a file char by char </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>The type of the function that operates on the line </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The file path </td></tr>
+    <tr><td class="paramname">f</td><td>Function that operates on the line </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9426341258b37f103ba876e0acc8d5b7" name="a9426341258b37f103ba876e0acc8d5b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9426341258b37f103ba876e0acc8d5b7">&#9670;&nbsp;</a></span>readFileLineByLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Utils::readFileLineByLine </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Read a file line by line </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>The type of the function that operates on the line </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The file path </td></tr>
+    <tr><td class="paramname">f</td><td>Function that operates on the line </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac39cf5e0255c92369aa04b2321f743ad" name="ac39cf5e0255c92369aa04b2321f743ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac39cf5e0255c92369aa04b2321f743ad">&#9670;&nbsp;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Utils::swap </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Swap two variables of type T </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the variables </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first variable to swap </td></tr>
+    <tr><td class="paramname">b</td><td>The second variable to swap </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_utils_8h_source.html">Utils.h</a></li>
-<li>Utils.cpp</li>
+<li>src/misc/<a class="el" href="_utils_8h_source.html">Utils.h</a></li>
+<li>src/misc/Utils.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

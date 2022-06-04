@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Graph: Trie Class Reference</title>
+<title>Spelly: Trie Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Graph
+   <div id="projectname">Spelly
    </div>
   </td>
  </tr>
@@ -64,7 +64,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_trie-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Trie Class Reference</div></div>
@@ -73,21 +72,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2f48b8eac5f922b6c8075f59a5dc6820"><td class="memItemLeft" align="right" valign="top"><a id="a2f48b8eac5f922b6c8075f59a5dc6820" name="a2f48b8eac5f922b6c8075f59a5dc6820"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Trie</b> (const string &amp;path)</td></tr>
-<tr class="separator:a2f48b8eac5f922b6c8075f59a5dc6820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af324bd19d7e1cb6dd1a8856bec8b4bce"><td class="memItemLeft" align="right" valign="top"><a id="af324bd19d7e1cb6dd1a8856bec8b4bce" name="af324bd19d7e1cb6dd1a8856bec8b4bce"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Trie</b> (string alphabet, const vector&lt; <a class="el" href="class_word.html">Word</a> * &gt; &amp;words)</td></tr>
+<tr class="separator:af324bd19d7e1cb6dd1a8856bec8b4bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56098d267ba561750ba4fb6a767c0e49"><td class="memItemLeft" align="right" valign="top"><a id="a56098d267ba561750ba4fb6a767c0e49" name="a56098d267ba561750ba4fb6a767c0e49"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (const <a class="el" href="class_word.html">Word</a> &amp;word) const</td></tr>
 <tr class="separator:a56098d267ba561750ba4fb6a767c0e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65c26c1ce727ac174dcc4c791a77f064"><td class="memItemLeft" align="right" valign="top"><a id="a65c26c1ce727ac174dcc4c791a77f064" name="a65c26c1ce727ac174dcc4c791a77f064"></a>
 <a class="el" href="class_word.html">Word</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>search</b> (const string &amp;word) const</td></tr>
 <tr class="separator:a65c26c1ce727ac174dcc4c791a77f064"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a909eeebf2aad1b7159c5909cc8603511"><td class="memItemLeft" align="right" valign="top"><a id="a909eeebf2aad1b7159c5909cc8603511" name="a909eeebf2aad1b7159c5909cc8603511"></a>
-<a class="el" href="class_trie_node.html">TrieNode</a>&lt; <a class="el" href="class_word.html">Word</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>root</b></td></tr>
-<tr class="separator:a909eeebf2aad1b7159c5909cc8603511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c555a1b99b35c5cbf548f94e5d4f79b"><td class="memItemLeft" align="right" valign="top"><a id="a4c555a1b99b35c5cbf548f94e5d4f79b" name="a4c555a1b99b35c5cbf548f94e5d4f79b"></a>
+<a class="el" href="class_word.html">Word</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>autocomplete</b> (const string &amp;word, unsigned int maxWords=3, unsigned int maxDepth=10) const</td></tr>
+<tr class="separator:a4c555a1b99b35c5cbf548f94e5d4f79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -96,8 +92,8 @@ ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;
 <tr class="separator:a200b1c8f169f337a259de0b5ba0e58fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_trie_8h_source.html">Trie.h</a></li>
-<li>Trie.cpp</li>
+<li>src/trie/<a class="el" href="_trie_8h_source.html">Trie.h</a></li>
+<li>src/trie/Trie.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
