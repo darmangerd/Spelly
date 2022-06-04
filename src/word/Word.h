@@ -6,31 +6,21 @@
 
 #include <iostream>
 #include <utility>
-#include "Language.h"
 
 using namespace std;
 
 class Word {
 private:
-    string content;
-    Language *language;
+    string text;
 
 public:
-    explicit Word(string content, Language *language) : content(std::move(content)), language(language) {}
+    explicit Word(string text) : text(std::move(text)) {}
 
-    explicit Word(string content) : Word(std::move(content), nullptr) {}
+    string getText() const { return this->text; }
 
-    ~Word();
+    unsigned int length() const { return this->text.size(); }
 
-    Language *getLanguage() const { return this->language; }
-
-    void setLanguage(Language *language) { this->language = language; }
-
-    string getContent() const { return this->content; }
-
-    unsigned int getLength() const { return this->content.size(); }
-
-    void setContent(string content) { this->content = content; }
+    void setText(string text) { this->text = text; }
 
     unsigned int levenshteinDistance(Word &word);
 

@@ -33,7 +33,7 @@ void autosuggest(const string &word, const Trie &t) {
 
     for (unsigned int i = 0; i < maxWords; i++) {
         if (suggestions[i] != nullptr) {
-            cout << i + 1 << ") " << suggestions[i]->getContent() << endl;
+            cout << i + 1 << ") " << suggestions[i]->getText() << endl;
         } else {
             cout << i + 1 << ") empty suggestion" << endl;
         }

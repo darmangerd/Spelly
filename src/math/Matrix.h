@@ -63,5 +63,3 @@ ostream &operator<<(ostream &os, const Matrix<T> &matrix) {
     os << matrix.toString();
     return os;
 }
-
-

@@ -4,7 +4,6 @@
 
 #pragma one
 
-
 #include "../word/Word.h"
 #include <vector>
 

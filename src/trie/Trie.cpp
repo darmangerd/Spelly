@@ -16,18 +16,18 @@ Trie::Trie(string alphabet, const vector<Word *> &words) : alphabet(std::move(al
 void Trie::insert(const Word &word) const {
     auto current = this->root;
 
-    for (unsigned int i = 0; i < word.getLength(); i++) {
-        int indexInAlphabet = Utils::getIndexInAlphabet(word.getContent()[i], this->alphabet);
+    for (unsigned int i = 0; i < word.length(); i++) {
+        int indexInAlphabet = Utils::getIndexInAlphabet(word.getText()[i], this->alphabet);
 
         if (indexInAlphabet < 0) continue;
 
         if (current->children[indexInAlphabet] == nullptr) {
             current->children[indexInAlphabet] = new TrieNode<Word *>(
-                    new Word(word.getContent().substr(0, i + 1), word.getLanguage()),
-                    i == word.getLength() - 1,
+                    new Word(word.getText().substr(0, i + 1)),
+                    i == word.length() - 1,
                     this->alphabet.length()
             );
-        } else if (i == word.getLength() - 1) {
+        } else if (i == word.length() - 1) {
             current->children[indexInAlphabet]->isTerminal = true;
         }
 

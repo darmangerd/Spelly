@@ -5,24 +5,20 @@
 #include "Word.h"
 #include "../math/Matrix.h"
 
-Word::~Word() {
-
-}
-
 unsigned int Word::levenshteinDistance(Word &word) {
-    auto m = Matrix<unsigned int>(word.content.length() + 1, this->content.length() + 1, 0);
+    auto m = Matrix<unsigned int>(word.text.length() + 1, this->text.length() + 1, 0);
 
-    for (unsigned int i = 1; i < this->getLength() + 1; ++i) {
+    for (unsigned int i = 1; i < this->length() + 1; ++i) {
         m.set(i, 0, i);
     }
 
-    for (unsigned int j = 1; j < word.getLength() + 1; ++j) {
+    for (unsigned int j = 1; j < word.length() + 1; ++j) {
         m.set(0, j, j);
     }
 
-    for (unsigned int i = 1; i < this->getLength() + 1; ++i) {
-        for (unsigned int j = 1; j < word.getLength() + 1; ++j) {
-            if (this->content[i - 1] == word.content[j - 1]) {
+    for (unsigned int i = 1; i < this->length() + 1; ++i) {
+        for (unsigned int j = 1; j < word.length() + 1; ++j) {
+            if (this->text[i - 1] == word.text[j - 1]) {
                 m.set(i, j, m.get(i - 1, j - 1));
             } else {
                 auto a = m.get(i, j - 1);
@@ -40,27 +36,19 @@ unsigned int Word::levenshteinDistance(Word &word) {
         }
     }
 
-    return m.get(this->getLength(), word.getLength());
+    return m.get(this->length(), word.length());
 }
 
 bool operator==(const Word &left, const Word &right) {
-    return (
-        left.content == right.content &&
-        left.language->getName() == right.language->getName()
-    );
+    return left.getText() == right.getText();
 }
 
 bool operator<(const Word &left, const Word &right) {
-    return left.content.length() < right.content.length();
+    return left.text.length() < right.text.length();
 }
 
 ostream &operator<<(ostream &os, const Word &w) {
-    os << w.getContent();
-
-    if (w.getLanguage() != nullptr) {
-        os << " (" << w.getLanguage()->getName() << ")";
-    }
-
+    os << w.getText();
     return os;
 }
 

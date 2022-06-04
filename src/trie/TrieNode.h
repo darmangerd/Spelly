@@ -16,24 +16,24 @@ private:
     unsigned int alphabetSize = 26;
 
     void initChildren() {
-        this->children = new TrieNode<T>* [this->alphabetSize];
+        this->children = new TrieNode<T> *[this->alphabetSize];
         for (unsigned int i = 0; i < this->alphabetSize; ++i) {
             this->children[i] = nullptr;
         }
     }
 
 public:
-    TrieNode(T data, bool isTerminal) : data(data), isTerminal(isTerminal) {
-        initChildren();
-    }
-
     TrieNode(T data, bool isTerminal, unsigned int alphabetSize) : data(data), isTerminal(isTerminal),
-                                                                    alphabetSize(alphabetSize) {
+                                                                   alphabetSize(alphabetSize) {
         initChildren();
     }
 
     TrieNode() : TrieNode(nullptr, false, 26) {
         initChildren();
+    }
+
+    ~TrieNode() {
+        delete[] children;
     }
 
     void setAlphabetSize(unsigned int alphabetSize) {
