@@ -29,14 +29,14 @@ void searchInTrie(const string &word) {
 void autosuggest(const string &word) {
     cout << "Autocompleting: \"" << word << "\"..." << endl;
 
-    unsigned int maxWords = 3;
+    unsigned int maxWords = 9;
     auto suggestions = t.autocomplete(word, maxWords);
 
     for (unsigned int i = 0; i < maxWords; i++) {
         if (suggestions[i] != nullptr) {
             cout << i + 1 << ") " << suggestions[i]->getContent() << endl;
         } else {
-            cout << "empty suggestion" << endl;
+            cout << i + 1 << ") empty suggestion" << endl;
         }
     }
 }
@@ -46,7 +46,7 @@ int main() {
 
     cout << endl;
 
-    autosuggest("clémenc");
+    autosuggest("dé");
 
     return EXIT_SUCCESS;
 }

@@ -17,7 +17,9 @@ private:
     TrieNode<Word *> *root;
     string alphabet;
 
-    Word *recursiveAutocomplete(TrieNode<Word *> *currentWord) const;
+    void recursiveAutocomplete(TrieNode<Word *> *currentWord, Word **suggestions, unsigned int &wordCount,
+                               unsigned int maxWords,
+                               unsigned int &depth, unsigned int maxDepth) const;
 
 public:
     explicit Trie(const string &path);
@@ -26,7 +28,7 @@ public:
 
     Word *search(const string &word) const;
 
-    Word **autocomplete(const string &word, unsigned int maxWords = 3) const;
+    Word **autocomplete(const string &word, unsigned int maxWords = 3, unsigned int maxDepth = 10) const;
 
     friend ostream &operator<<(ostream &os, const Trie &t);
 };

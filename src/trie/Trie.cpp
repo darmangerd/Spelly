@@ -47,17 +47,39 @@ void Trie::insert(const Word &word) const {
     }
 }
 
-Word *Trie::recursiveAutocomplete(TrieNode<Word *> *currentWord) const {
-    if (currentWord == nullptr) return nullptr;
+void
+Trie::recursiveAutocomplete(
+        TrieNode<Word *> *currentWord,
+        Word **suggestions,
+        unsigned int &wordCount,
+        unsigned int maxWords,
+        unsigned int &depth,
+        unsigned int maxDepth
+) const {
+    if (currentWord == nullptr) return;
 
-    if (currentWord->isTerminal) {
-        return currentWord->data;
+    for (unsigned int i = 0; i < this->alphabet.length(); i++) {
+        if (currentWord->children[i] == nullptr) continue;
+
+        if (currentWord->children[i]->isTerminal) {
+            suggestions[wordCount] = currentWord->children[i]->data;
+            wordCount++;
+
+            if (wordCount >= maxWords) {
+                return;
+            }
+        }
+    }
+
+    depth++;
+
+    if (depth >= maxDepth) {
+        return;
     }
 
     for (unsigned int i = 0; i < this->alphabet.length(); i++) {
-        if (currentWord->children[i] != nullptr) {
-            return recursiveAutocomplete(currentWord->children[i]);
-        }
+        recursiveAutocomplete(currentWord->children[i], suggestions, wordCount, maxWords,
+                              depth, maxDepth);
     }
 }
 
@@ -81,36 +103,24 @@ Word *Trie::search(const string &word) const {
     return current->data;
 }
 
-Word **Trie::autocomplete(const string &word, unsigned int maxWords) const {
+Word **Trie::autocomplete(const string &word, unsigned int maxWords, unsigned int maxDepth) const {
     auto current = this->root;
-    auto *suggestions = new Word*[maxWords];
 
-    for (unsigned int i = 0; i < maxWords; ++i) {
-        suggestions[i] = nullptr;
-    }
-
+    auto *suggestions = Utils::initArray<Word *>(nullptr, maxWords);
     unsigned int wordCount = 0;
 
     for (auto i: word) {
         int indexInAlphabet = Utils::getIndexInAlphabet(i, this->alphabet);
 
         if (current->children[indexInAlphabet] == nullptr) {
-            return nullptr;
+            return suggestions;
         }
 
         current = current->children[indexInAlphabet];
     }
 
-    while (wordCount < maxWords) {
-        for (unsigned int i = 0; i < this->alphabet.length(); i++) {
-            auto res = recursiveAutocomplete(current->children[i]);
-
-            if (res != nullptr) {
-                suggestions[wordCount] = res;
-                wordCount++;
-            }
-        }
-    }
+    unsigned int depth = 0;
+    recursiveAutocomplete(current, suggestions, wordCount, maxWords, depth, maxDepth);
 
     return suggestions;
 }
