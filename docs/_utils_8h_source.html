@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        ifstream file = <a class="code hl_function" href="class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db">Utils::openFile</a>(path);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">string</span> line;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">long</span> count = 0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> count = 0;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">while</span> (getline(file, line)) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            f(line, count);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            count++;</div>
@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        ifstream file = <a class="code hl_function" href="class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db">Utils::openFile</a>(path);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">char</span> c = 0;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">long</span> count = 0;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> count = 0;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">while</span> (file.get(c)) {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            f(c, count);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            count++;</div>
@@ -113,74 +113,71 @@ $(function() {
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_utils.html#a48438467c86db627278b48b61625d405">   64</a></span>    <span class="keyword">static</span> T *<a class="code hl_function" href="class_utils.html#a48438467c86db627278b48b61625d405">initializeArray</a>(T default_value, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_utils.html#a9757726d4f9ba3d81d4057bbbee08a43">   64</a></span>    <span class="keyword">static</span> T *<a class="code hl_function" href="class_utils.html#a9757726d4f9ba3d81d4057bbbee08a43">initializeArray</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> size, T defaultValue) {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        T *arr = <span class="keyword">new</span> T[size];</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            arr[i] = default_value;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            arr[i] = defaultValue;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> arr;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_utils.html#ac39cf5e0255c92369aa04b2321f743ad">   81</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_utils.html#ac39cf5e0255c92369aa04b2321f743ad">swap</a>(T &amp;a, T &amp;b) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        T tmp = a;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        a = b;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        b = tmp;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">   96</a></span>    <span class="keyword">static</span> vector&lt;T&gt; <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">sliceVector</a>(vector&lt;T&gt; v, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> end) {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        vector&lt;T&gt; vSlice(end - start);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        copy(v.begin() + start, v.begin() + end, vSlice.begin());</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> vSlice;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_utils.html#a1aed991cfeb0c8d00c7bf6db51c48e99">  111</a></span>    <span class="keyword">static</span> vector&lt;T&gt; *<a class="code hl_function" href="class_utils.html#a1aed991cfeb0c8d00c7bf6db51c48e99">createChunks</a>(vector&lt;T&gt; v, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numberOfChunks) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> chunkSize = v.size() / numberOfChunks;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">auto</span> vectors = <span class="keyword">new</span> vector&lt;T&gt;[numberOfChunks];</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; numberOfChunks - 1; i++) {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start = i * chunkSize;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> end = (i + 1) * chunkSize;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            vectors[i] = <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::sliceVector</a>(v, start, end);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_utils.html#a16f586c0f453097f3dad0c35c029a126">   83</a></span>    <span class="keyword">static</span> T *<a class="code hl_function" href="class_utils.html#a16f586c0f453097f3dad0c35c029a126">initializeArray</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> size, F &amp;f) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        T *arr = <span class="keyword">new</span> T[size];</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            arr[i] = f(i);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> arr;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_utils.html#a148bb94c7d42b686faa53b1685374207">  102</a></span>    <span class="keyword">static</span> vector&lt;T&gt; <a class="code hl_function" href="class_utils.html#a148bb94c7d42b686faa53b1685374207">sliceVector</a>(vector&lt;T&gt; v, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> start, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> end) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        vector&lt;T&gt; vSlice(end - start + 1);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        copy(v.begin() + start, v.begin() + end + 1, vSlice.begin());</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> vSlice;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_utils.html#a2b7eafd627e657dcaa853fe7de6cb5ac">  117</a></span>    <span class="keyword">static</span> vector&lt;vector&lt;T&gt;&gt; <a class="code hl_function" href="class_utils.html#a2b7eafd627e657dcaa853fe7de6cb5ac">createChunks</a>(vector&lt;T&gt; v, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> numberOfChunks) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span> (numberOfChunks &gt; v.size()) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            numberOfChunks = v.size();</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start = (numberOfChunks - 1) * chunkSize;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> end = v.size();</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        vectors[numberOfChunks - 1] = <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::sliceVector</a>(v, start, end);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> vectors;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> chunkSize = v.size() / numberOfChunks;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        vector&lt;vector&lt;T&gt;&gt; vectors(numberOfChunks);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 0; i &lt; numberOfChunks - 1; i++) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> start = i * chunkSize;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> end = (i + 1) * chunkSize - 1;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_utils.html#a787c73353e70ada774de68cf461d6c66">extractSymbolsFromFile</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;path);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            vectors[i] = <a class="code hl_function" href="class_utils.html#a148bb94c7d42b686faa53b1685374207">Utils::sliceVector</a>(v, start, end);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> start = (numberOfChunks - 1) * chunkSize;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> end = v.size() - 1;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        vectors[numberOfChunks - 1] = <a class="code hl_function" href="class_utils.html#a148bb94c7d42b686faa53b1685374207">Utils::sliceVector</a>(v, start, end);</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keyword">static</span> array&lt;char, 26&gt; <a class="code hl_function" href="class_utils.html#a84a3d73328eafb0cca17cf73e75e0448">getAlphabet</a>(<span class="keywordtype">int</span> max = 26);</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_utils.html#aa33461c1ae807992384625903cde3a46">getIndexInAlphabet</a>(<span class="keywordtype">char</span> letter);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_utils.html#aa33461c1ae807992384625903cde3a46">getIndexInAlphabet</a>(<span class="keywordtype">char</span> letter, <span class="keywordtype">string</span> alphabet);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code hl_function" href="class_utils.html#abc6ca4d23cebdf98a46ebc05f7fa7143">getLetterFromAlphabetIndex</a>(<span class="keywordtype">int</span> letterIndex);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keyword">static</span> ifstream <a class="code hl_function" href="class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db">openFile</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;path);</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>};</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">return</span> vectors;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_utils.html#a787c73353e70ada774de68cf461d6c66">extractSymbolsFromFile</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;path);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">static</span> ifstream <a class="code hl_function" href="class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db">openFile</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;path);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>};</div>
 <div class="ttc" id="aclass_utils_html"><div class="ttname"><a href="class_utils.html">Utils</a></div><div class="ttdef"><b>Definition:</b> Utils.h:14</div></div>
 <div class="ttc" id="aclass_utils_html_a128dce1df61d97ddb059a30eefe0792b"><div class="ttname"><a href="class_utils.html#a128dce1df61d97ddb059a30eefe0792b">Utils::readFileCharByChar</a></div><div class="ttdeci">static void readFileCharByChar(const string &amp;path, F &amp;f)</div><div class="ttdef"><b>Definition:</b> Utils.h:43</div></div>
-<div class="ttc" id="aclass_utils_html_a1aed991cfeb0c8d00c7bf6db51c48e99"><div class="ttname"><a href="class_utils.html#a1aed991cfeb0c8d00c7bf6db51c48e99">Utils::createChunks</a></div><div class="ttdeci">static vector&lt; T &gt; * createChunks(vector&lt; T &gt; v, unsigned int numberOfChunks)</div><div class="ttdef"><b>Definition:</b> Utils.h:111</div></div>
-<div class="ttc" id="aclass_utils_html_a48438467c86db627278b48b61625d405"><div class="ttname"><a href="class_utils.html#a48438467c86db627278b48b61625d405">Utils::initializeArray</a></div><div class="ttdeci">static T * initializeArray(T default_value, unsigned int size)</div><div class="ttdef"><b>Definition:</b> Utils.h:64</div></div>
-<div class="ttc" id="aclass_utils_html_a485677499de7e96cc2d189537a4914d7"><div class="ttname"><a href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::sliceVector</a></div><div class="ttdeci">static vector&lt; T &gt; sliceVector(vector&lt; T &gt; v, unsigned int start, unsigned int end)</div><div class="ttdef"><b>Definition:</b> Utils.h:96</div></div>
-<div class="ttc" id="aclass_utils_html_a787c73353e70ada774de68cf461d6c66"><div class="ttname"><a href="class_utils.html#a787c73353e70ada774de68cf461d6c66">Utils::extractSymbolsFromFile</a></div><div class="ttdeci">static string extractSymbolsFromFile(const string &amp;path)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:39</div></div>
-<div class="ttc" id="aclass_utils_html_a84a3d73328eafb0cca17cf73e75e0448"><div class="ttname"><a href="class_utils.html#a84a3d73328eafb0cca17cf73e75e0448">Utils::getAlphabet</a></div><div class="ttdeci">static array&lt; char, 26 &gt; getAlphabet(int max=26)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:11</div></div>
-<div class="ttc" id="aclass_utils_html_a8d7a01afb08f9d347e7269e8dceb00db"><div class="ttname"><a href="class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db">Utils::openFile</a></div><div class="ttdeci">static ifstream openFile(const string &amp;path)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:61</div></div>
+<div class="ttc" id="aclass_utils_html_a148bb94c7d42b686faa53b1685374207"><div class="ttname"><a href="class_utils.html#a148bb94c7d42b686faa53b1685374207">Utils::sliceVector</a></div><div class="ttdeci">static vector&lt; T &gt; sliceVector(vector&lt; T &gt; v, unsigned long start, unsigned long end)</div><div class="ttdef"><b>Definition:</b> Utils.h:102</div></div>
+<div class="ttc" id="aclass_utils_html_a16f586c0f453097f3dad0c35c029a126"><div class="ttname"><a href="class_utils.html#a16f586c0f453097f3dad0c35c029a126">Utils::initializeArray</a></div><div class="ttdeci">static T * initializeArray(unsigned long size, F &amp;f)</div><div class="ttdef"><b>Definition:</b> Utils.h:83</div></div>
+<div class="ttc" id="aclass_utils_html_a2b7eafd627e657dcaa853fe7de6cb5ac"><div class="ttname"><a href="class_utils.html#a2b7eafd627e657dcaa853fe7de6cb5ac">Utils::createChunks</a></div><div class="ttdeci">static vector&lt; vector&lt; T &gt; &gt; createChunks(vector&lt; T &gt; v, unsigned long numberOfChunks)</div><div class="ttdef"><b>Definition:</b> Utils.h:117</div></div>
+<div class="ttc" id="aclass_utils_html_a787c73353e70ada774de68cf461d6c66"><div class="ttname"><a href="class_utils.html#a787c73353e70ada774de68cf461d6c66">Utils::extractSymbolsFromFile</a></div><div class="ttdeci">static string extractSymbolsFromFile(const string &amp;path)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:11</div></div>
+<div class="ttc" id="aclass_utils_html_a8d7a01afb08f9d347e7269e8dceb00db"><div class="ttname"><a href="class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db">Utils::openFile</a></div><div class="ttdeci">static ifstream openFile(const string &amp;path)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:28</div></div>
 <div class="ttc" id="aclass_utils_html_a9426341258b37f103ba876e0acc8d5b7"><div class="ttname"><a href="class_utils.html#a9426341258b37f103ba876e0acc8d5b7">Utils::readFileLineByLine</a></div><div class="ttdeci">static void readFileLineByLine(const string &amp;path, F &amp;f)</div><div class="ttdef"><b>Definition:</b> Utils.h:23</div></div>
-<div class="ttc" id="aclass_utils_html_aa33461c1ae807992384625903cde3a46"><div class="ttname"><a href="class_utils.html#aa33461c1ae807992384625903cde3a46">Utils::getIndexInAlphabet</a></div><div class="ttdeci">static int getIndexInAlphabet(char letter)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:21</div></div>
-<div class="ttc" id="aclass_utils_html_abc6ca4d23cebdf98a46ebc05f7fa7143"><div class="ttname"><a href="class_utils.html#abc6ca4d23cebdf98a46ebc05f7fa7143">Utils::getLetterFromAlphabetIndex</a></div><div class="ttdeci">static char getLetterFromAlphabetIndex(int letterIndex)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:35</div></div>
-<div class="ttc" id="aclass_utils_html_ac39cf5e0255c92369aa04b2321f743ad"><div class="ttname"><a href="class_utils.html#ac39cf5e0255c92369aa04b2321f743ad">Utils::swap</a></div><div class="ttdeci">static void swap(T &amp;a, T &amp;b)</div><div class="ttdef"><b>Definition:</b> Utils.h:81</div></div>
+<div class="ttc" id="aclass_utils_html_a9757726d4f9ba3d81d4057bbbee08a43"><div class="ttname"><a href="class_utils.html#a9757726d4f9ba3d81d4057bbbee08a43">Utils::initializeArray</a></div><div class="ttdeci">static T * initializeArray(unsigned long size, T defaultValue)</div><div class="ttdef"><b>Definition:</b> Utils.h:64</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
