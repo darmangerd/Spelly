@@ -15,45 +15,53 @@ template<class T>
 class Matrix {
 private:
     T **matrix;
-    unsigned int width;
-    unsigned int height;
+    unsigned int columns;
+    unsigned int rows;
 
 public:
-    Matrix(const unsigned int width, const unsigned int height, T defaultValue) : width(width), height(height) {
-        this->matrix = new T *[height];
+    Matrix(const unsigned int rows, const unsigned int columns, T defaultValue) : columns(columns), rows(rows) {
+        this->matrix = new T *[rows];
 
-        for (unsigned int x = 0; x < height; ++x) {
-            this->matrix[x] = new T[width];
+        for (unsigned int rowIndex = 0; rowIndex < rows; rowIndex++) {
+            this->matrix[rowIndex] = new T[columns];
 
-            for (unsigned int y = 0; y < width; ++y) {
-                this->matrix[x][y] = defaultValue;
+            for (unsigned int columnIndex = 0; columnIndex < columns; columnIndex++) {
+                this->matrix[rowIndex][columnIndex] = defaultValue;
             }
         }
     }
 
     ~Matrix() {
-        for (int i = 0; i < this->height; ++i) {
-            delete[] this->matrix[i];
+        for (int rowIndex = 0; rowIndex < this->rows; rowIndex++) {
+            delete[] this->matrix[rowIndex];
         }
         delete[] this->matrix;
     }
 
-    T get(unsigned int i, unsigned int j) const {
-        return this->matrix[i][j];
+    T get(unsigned int columnIndex, unsigned int rowIndex) const {
+        return this->matrix[rowIndex][columnIndex];
     }
 
-    void set(unsigned int i, unsigned int j, T value) {
-        this->matrix[i][j] = value;
+    void set(unsigned int columnIndex, unsigned int rowIndex, T value) {
+        this->matrix[rowIndex][columnIndex] = value;
+    }
+
+    unsigned int getWidth() const {
+        return columns;
+    }
+
+    unsigned int getHeight() const {
+        return rows;
     }
 
     string toString() const {
         stringstream ss;
 
-        ss << "Matrix dimensions: " << this->width << "x" << this->height << endl;
+        ss << "Matrix dimensions: " << this->columns << "x" << this->rows << endl;
 
-        for (int i = 0; i < this->height; ++i) {
-            for (int j = 0; j < this->width; ++j) {
-                ss << this->get(i, j) << " ";
+        for (int rowIndex = 0; rowIndex < this->rows; rowIndex++) {
+            for (int columnIndex = 0; columnIndex < this->columns; columnIndex++) {
+                ss << this->get(columnIndex, rowIndex) << " ";
             }
             ss << endl;
         }

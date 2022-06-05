@@ -6,7 +6,7 @@
 #include "../math/Matrix.h"
 
 unsigned int Word::levenshteinDistance(Word &word) {
-    auto m = Matrix<unsigned int>(word.text.length() + 1, this->text.length() + 1, 0);
+    auto m = Matrix<unsigned int>(word.length() + 1, this->length() + 1, 0);
 
     for (unsigned int i = 1; i < this->length() + 1; ++i) {
         m.set(i, 0, i);
