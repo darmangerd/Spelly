@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
-<meta name="viewport" content="columns=device-columns, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Spelly: src/misc/Utils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_utils.html#a48438467c86db627278b48b61625d405">   64</a></span>    <span class="keyword">static</span> T *<a class="code hl_function" href="class_utils.html#a48438467c86db627278b48b61625d405">initArray</a>(T default_value, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_utils.html#a48438467c86db627278b48b61625d405">   64</a></span>    <span class="keyword">static</span> T *<a class="code hl_function" href="class_utils.html#a48438467c86db627278b48b61625d405">initializeArray</a>(T default_value, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        T *arr = <span class="keyword">new</span> T[size];</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++) {</div>
@@ -131,7 +131,7 @@ $(function() {
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">   96</a></span>    <span class="keyword">static</span> vector&lt;T&gt; <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">createVectorSlice</a>(vector&lt;T&gt; v, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> end) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">   96</a></span>    <span class="keyword">static</span> vector&lt;T&gt; <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">sliceVector</a>(vector&lt;T&gt; v, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> end) {</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        vector&lt;T&gt; vSlice(end - start);</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        copy(v.begin() + start, v.begin() + end, vSlice.begin());</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
@@ -147,12 +147,12 @@ $(function() {
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start = i * chunkSize;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> end = (i + 1) * chunkSize;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            vectors[i] = <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::createVectorSlice</a>(v, start, end);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            vectors[i] = <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::sliceVector</a>(v, start, end);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start = (numberOfChunks - 1) * chunkSize;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> end = v.size();</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        vectors[numberOfChunks - 1] = <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::createVectorSlice</a>(v, start, end);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        vectors[numberOfChunks - 1] = <a class="code hl_function" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::sliceVector</a>(v, start, end);</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> vectors;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
@@ -172,8 +172,8 @@ $(function() {
 <div class="ttc" id="aclass_utils_html"><div class="ttname"><a href="class_utils.html">Utils</a></div><div class="ttdef"><b>Definition:</b> Utils.h:14</div></div>
 <div class="ttc" id="aclass_utils_html_a128dce1df61d97ddb059a30eefe0792b"><div class="ttname"><a href="class_utils.html#a128dce1df61d97ddb059a30eefe0792b">Utils::readFileCharByChar</a></div><div class="ttdeci">static void readFileCharByChar(const string &amp;path, F &amp;f)</div><div class="ttdef"><b>Definition:</b> Utils.h:43</div></div>
 <div class="ttc" id="aclass_utils_html_a1aed991cfeb0c8d00c7bf6db51c48e99"><div class="ttname"><a href="class_utils.html#a1aed991cfeb0c8d00c7bf6db51c48e99">Utils::createChunks</a></div><div class="ttdeci">static vector&lt; T &gt; * createChunks(vector&lt; T &gt; v, unsigned int numberOfChunks)</div><div class="ttdef"><b>Definition:</b> Utils.h:111</div></div>
-<div class="ttc" id="aclass_utils_html_a48438467c86db627278b48b61625d405"><div class="ttname"><a href="class_utils.html#a48438467c86db627278b48b61625d405">Utils::initArray</a></div><div class="ttdeci">static T * initArray(T default_value, unsigned int size)</div><div class="ttdef"><b>Definition:</b> Utils.h:64</div></div>
-<div class="ttc" id="aclass_utils_html_a485677499de7e96cc2d189537a4914d7"><div class="ttname"><a href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::createVectorSlice</a></div><div class="ttdeci">static vector&lt; T &gt; createVectorSlice(vector&lt; T &gt; v, unsigned int start, unsigned int end)</div><div class="ttdef"><b>Definition:</b> Utils.h:96</div></div>
+<div class="ttc" id="aclass_utils_html_a48438467c86db627278b48b61625d405"><div class="ttname"><a href="class_utils.html#a48438467c86db627278b48b61625d405">Utils::initializeArray</a></div><div class="ttdeci">static T * initializeArray(T default_value, unsigned int size)</div><div class="ttdef"><b>Definition:</b> Utils.h:64</div></div>
+<div class="ttc" id="aclass_utils_html_a485677499de7e96cc2d189537a4914d7"><div class="ttname"><a href="class_utils.html#a485677499de7e96cc2d189537a4914d7">Utils::sliceVector</a></div><div class="ttdeci">static vector&lt; T &gt; sliceVector(vector&lt; T &gt; v, unsigned int start, unsigned int end)</div><div class="ttdef"><b>Definition:</b> Utils.h:96</div></div>
 <div class="ttc" id="aclass_utils_html_a787c73353e70ada774de68cf461d6c66"><div class="ttname"><a href="class_utils.html#a787c73353e70ada774de68cf461d6c66">Utils::extractSymbolsFromFile</a></div><div class="ttdeci">static string extractSymbolsFromFile(const string &amp;path)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:39</div></div>
 <div class="ttc" id="aclass_utils_html_a84a3d73328eafb0cca17cf73e75e0448"><div class="ttname"><a href="class_utils.html#a84a3d73328eafb0cca17cf73e75e0448">Utils::getAlphabet</a></div><div class="ttdeci">static array&lt; char, 26 &gt; getAlphabet(int max=26)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:11</div></div>
 <div class="ttc" id="aclass_utils_html_a8d7a01afb08f9d347e7269e8dceb00db"><div class="ttname"><a href="class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db">Utils::openFile</a></div><div class="ttdeci">static ifstream openFile(const string &amp;path)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:61</div></div>
@@ -184,7 +184,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" columns="104" rows="31" alt="doxygen"/></a> 1.9.3
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

@@ -11,10 +11,7 @@ using namespace std;
 
 Correction::Correction(vector<Word *> words, unsigned int numberOfThreads) : numberOfThreads(numberOfThreads) {
     this->wordsChunks = Utils::createChunks(words, numberOfThreads);
-}
-
-Correction::~Correction() {
-    delete[] this->wordsChunks;
+    this->numberOfThreads = wordsChunks.size();
 }
 
 vector<pair<Word *, unsigned int>> Correction::findCandidates(Word &wordToFind) {

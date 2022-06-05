@@ -21,9 +21,9 @@ void Trie::insert(const Word &word) const {
     auto current = this->root;
 
     for (unsigned int i = 0; i < word.length(); i++) {
-        int indexInAlphabet = Utils::getIndexInAlphabet(word.getText()[i], this->alphabet);
+        auto indexInAlphabet = this->alphabet.find(word.getText()[i]);
 
-        if (indexInAlphabet < 0) continue;
+        if (indexInAlphabet == string::npos) continue;
 
         if (current->getChild(indexInAlphabet) == nullptr) {
             current->setChild(
@@ -82,7 +82,7 @@ Word *Trie::search(const string &word) const {
     auto current = this->root;
 
     for (auto i: word) {
-        int indexInAlphabet = Utils::getIndexInAlphabet(i, this->alphabet);
+        auto indexInAlphabet = this->alphabet.find(i);
 
         if (current->getChild(indexInAlphabet) == nullptr) {
             return nullptr;
@@ -101,11 +101,11 @@ Word *Trie::search(const string &word) const {
 Word **Trie::autocomplete(const string &word, unsigned int maxWords, unsigned int maxDepth) const {
     auto current = this->root;
 
-    auto *suggestions = Utils::initArray<Word *>(nullptr, maxWords);
+    auto *suggestions = Utils::initializeArray<Word *>(maxWords, nullptr);
     unsigned int wordCount = 0;
 
     for (auto i: word) {
-        int indexInAlphabet = Utils::getIndexInAlphabet(i, this->alphabet);
+        auto indexInAlphabet = this->alphabet.find(i);
 
         if (current->getChild(indexInAlphabet) == nullptr) {
             return suggestions;

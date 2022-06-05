@@ -1,0 +1,21 @@
+# ninja log v5
+0	26	1654462169285841787	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	3426868f65b144d3
+0	26	1654462169285841787	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	3426868f65b144d3
+26	1168	1654462170427936814	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	f474e8883360372e
+26	1168	1654462170427936814	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	f474e8883360372e
+1168	1176	1654462170435726112	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	adf0c6ab04ed3d00
+1168	1176	1654462170435726112	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	adf0c6ab04ed3d00
+1176	1184	1654462170443963609	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	bee212cb455868
+1176	1184	1654462170443963609	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	bee212cb455868
+1184	1192	1654462170452235771	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	8026568a26b8b064
+1184	1192	1654462170452235771	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	8026568a26b8b064
+1192	1200	1654462170460126025	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	7cb93734ec31424
+1192	1200	1654462170460126025	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	7cb93734ec31424
+1200	1209	1654462170469251045	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	245189a5b5b56ab6
+1200	1209	1654462170469251045	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	245189a5b5b56ab6
+1209	1217	1654462170477407252	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	57a8b7156485617f
+1209	1217	1654462170477407252	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	57a8b7156485617f
+1217	1230	1654462170489724707	CMakeFiles/googletest-populate-complete	65e1068688767c81
+1217	1230	1654462170489724707	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	65e1068688767c81
+1217	1230	1654462170489724707	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	65e1068688767c81
+1217	1230	1654462170489724707	/Users/owen/local/dev/cpp/spelly/cmake-build-debug-coverage/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	65e1068688767c81

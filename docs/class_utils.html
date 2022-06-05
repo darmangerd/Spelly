@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
-<meta name="viewport" content="columns=device-columns, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Spelly: Utils Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -78,13 +78,13 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a128dce1df61d97ddb059a30eefe0792b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a128dce1df61d97ddb059a30eefe0792b">readFileCharByChar</a> (const string &amp;path, F &amp;f)</td></tr>
 <tr class="separator:a128dce1df61d97ddb059a30eefe0792b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48438467c86db627278b48b61625d405"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a48438467c86db627278b48b61625d405"><td class="memTemplItemLeft" align="right" valign="top">static T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a48438467c86db627278b48b61625d405">initArray</a> (T default_value, unsigned int size)</td></tr>
+<tr class="memitem:a48438467c86db627278b48b61625d405"><td class="memTemplItemLeft" align="right" valign="top">static T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a48438467c86db627278b48b61625d405">initializeArray</a> (T default_value, unsigned int size)</td></tr>
 <tr class="separator:a48438467c86db627278b48b61625d405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39cf5e0255c92369aa04b2321f743ad"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ac39cf5e0255c92369aa04b2321f743ad"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#ac39cf5e0255c92369aa04b2321f743ad">swap</a> (T &amp;a, T &amp;b)</td></tr>
 <tr class="separator:ac39cf5e0255c92369aa04b2321f743ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a485677499de7e96cc2d189537a4914d7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a485677499de7e96cc2d189537a4914d7"><td class="memTemplItemLeft" align="right" valign="top">static vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">createVectorSlice</a> (vector&lt; T &gt; v, unsigned int start, unsigned int end)</td></tr>
+<tr class="memitem:a485677499de7e96cc2d189537a4914d7"><td class="memTemplItemLeft" align="right" valign="top">static vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a485677499de7e96cc2d189537a4914d7">sliceVector</a> (vector&lt; T &gt; v, unsigned int start, unsigned int end)</td></tr>
 <tr class="separator:a485677499de7e96cc2d189537a4914d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1aed991cfeb0c8d00c7bf6db51c48e99"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a1aed991cfeb0c8d00c7bf6db51c48e99"><td class="memTemplItemLeft" align="right" valign="top">static vector&lt; T &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_utils.html#a1aed991cfeb0c8d00c7bf6db51c48e99">createChunks</a> (vector&lt; T &gt; v, unsigned int numberOfChunks)</td></tr>
@@ -156,7 +156,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <a id="a485677499de7e96cc2d189537a4914d7" name="a485677499de7e96cc2d189537a4914d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a485677499de7e96cc2d189537a4914d7">&#9670;&nbsp;</a></span>createVectorSlice()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a485677499de7e96cc2d189537a4914d7">&#9670;&nbsp;</a></span>sliceVector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,7 +167,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static vector&lt; T &gt; Utils::createVectorSlice </td>
+          <td class="memname">static vector&lt; T &gt; Utils::sliceVector </td>
           <td>(</td>
           <td class="paramtype">vector&lt; T &gt;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
@@ -391,7 +391,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <a id="a48438467c86db627278b48b61625d405" name="a48438467c86db627278b48b61625d405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48438467c86db627278b48b61625d405">&#9670;&nbsp;</a></span>initArray()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a48438467c86db627278b48b61625d405">&#9670;&nbsp;</a></span>initializeArray()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,7 +402,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static T * Utils::initArray </td>
+          <td class="memname">static T * Utils::initializeArray </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>default_value</em>, </td>
@@ -635,7 +635,7 @@ template&lt;class T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" columns="104" rows="31" alt="doxygen"/></a> 1.9.3
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

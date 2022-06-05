@@ -77,10 +77,12 @@ int main() {
     cout << endl;
 
     searchInTrie("clément", t);
+    searchInTrie("asd", t);
 
     cout << endl;
 
     autosuggest("dé", t);
+    autosuggest("daaaaé", t);
 
     return EXIT_SUCCESS;
 }

@@ -9,13 +9,13 @@
 
 class Correction {
 private:
-    vector<Word *> *wordsChunks;
+    vector<vector<Word *>> wordsChunks;
     unsigned int numberOfThreads;
 
 public:
     explicit Correction(vector<Word *> words, unsigned int numberOfThreads);
 
-    ~Correction();
+    ~Correction() = default;
 
     vector<pair<Word *, unsigned int>> findCandidates(Word &word);
 
