@@ -64,7 +64,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_trie_node-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">TrieNode&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -75,24 +74,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f97f5e82285d971300d2afcc5ea16cd"><td class="memItemLeft" align="right" valign="top"><a id="a2f97f5e82285d971300d2afcc5ea16cd" name="a2f97f5e82285d971300d2afcc5ea16cd"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TrieNode</b> (T data, bool isTerminal, unsigned int alphabetSize)</td></tr>
 <tr class="separator:a2f97f5e82285d971300d2afcc5ea16cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff02eedf2f3f494adf6ec5242f13893"><td class="memItemLeft" align="right" valign="top"><a id="a9ff02eedf2f3f494adf6ec5242f13893" name="a9ff02eedf2f3f494adf6ec5242f13893"></a>
+<a class="el" href="class_trie_node.html">TrieNode</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getParent</b> () const</td></tr>
+<tr class="separator:a9ff02eedf2f3f494adf6ec5242f13893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b10f06498ae1ef7f7caf6247e7726c8"><td class="memItemLeft" align="right" valign="top"><a id="a2b10f06498ae1ef7f7caf6247e7726c8" name="a2b10f06498ae1ef7f7caf6247e7726c8"></a>
+<a class="el" href="class_trie_node.html">TrieNode</a>&lt; T &gt; **&#160;</td><td class="memItemRight" valign="bottom"><b>getChildren</b> () const</td></tr>
+<tr class="separator:a2b10f06498ae1ef7f7caf6247e7726c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173b33053e334e80036ea801c20ceaad"><td class="memItemLeft" align="right" valign="top"><a id="a173b33053e334e80036ea801c20ceaad" name="a173b33053e334e80036ea801c20ceaad"></a>
+<a class="el" href="class_trie_node.html">TrieNode</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getChild</b> (unsigned int index) const</td></tr>
+<tr class="separator:a173b33053e334e80036ea801c20ceaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee20a1b3887ad59551d1e685cae2d12"><td class="memItemLeft" align="right" valign="top"><a id="a8ee20a1b3887ad59551d1e685cae2d12" name="a8ee20a1b3887ad59551d1e685cae2d12"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setChild</b> (unsigned int index, <a class="el" href="class_trie_node.html">TrieNode</a>&lt; T &gt; *child)</td></tr>
+<tr class="separator:a8ee20a1b3887ad59551d1e685cae2d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae84e7d874a1ad73ad3d5a8805e3142"><td class="memItemLeft" align="right" valign="top"><a id="adae84e7d874a1ad73ad3d5a8805e3142" name="adae84e7d874a1ad73ad3d5a8805e3142"></a>
+T&#160;</td><td class="memItemRight" valign="bottom"><b>getData</b> () const</td></tr>
+<tr class="separator:adae84e7d874a1ad73ad3d5a8805e3142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dab16838ad84662180318af8abe7f48"><td class="memItemLeft" align="right" valign="top"><a id="a3dab16838ad84662180318af8abe7f48" name="a3dab16838ad84662180318af8abe7f48"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getIsTerminal</b> () const</td></tr>
+<tr class="separator:a3dab16838ad84662180318af8abe7f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3de11ec1d9e114553ca5823574415735"><td class="memItemLeft" align="right" valign="top"><a id="a3de11ec1d9e114553ca5823574415735" name="a3de11ec1d9e114553ca5823574415735"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setIsTerminal</b> (bool isTerminal)</td></tr>
+<tr class="separator:a3de11ec1d9e114553ca5823574415735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97f5049481e7b9d5a7fe8d7803d29c5b"><td class="memItemLeft" align="right" valign="top"><a id="a97f5049481e7b9d5a7fe8d7803d29c5b" name="a97f5049481e7b9d5a7fe8d7803d29c5b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setAlphabetSize</b> (unsigned int alphabetSize)</td></tr>
 <tr class="separator:a97f5049481e7b9d5a7fe8d7803d29c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a75df51068504a2d3d8ccd0d3be770b66"><td class="memItemLeft" align="right" valign="top"><a id="a75df51068504a2d3d8ccd0d3be770b66" name="a75df51068504a2d3d8ccd0d3be770b66"></a>
-<a class="el" href="class_trie_node.html">TrieNode</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>parent</b></td></tr>
-<tr class="separator:a75df51068504a2d3d8ccd0d3be770b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d2e37aa7012acd86830eeaba58e2136"><td class="memItemLeft" align="right" valign="top"><a id="a2d2e37aa7012acd86830eeaba58e2136" name="a2d2e37aa7012acd86830eeaba58e2136"></a>
-<a class="el" href="class_trie_node.html">TrieNode</a>&lt; T &gt; **&#160;</td><td class="memItemRight" valign="bottom"><b>children</b></td></tr>
-<tr class="separator:a2d2e37aa7012acd86830eeaba58e2136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f640c95358e37780f168a6aaeacf8d4"><td class="memItemLeft" align="right" valign="top"><a id="a9f640c95358e37780f168a6aaeacf8d4" name="a9f640c95358e37780f168a6aaeacf8d4"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
-<tr class="separator:a9f640c95358e37780f168a6aaeacf8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1451fbbd15c8718c9cbbe9b198775e6"><td class="memItemLeft" align="right" valign="top"><a id="aa1451fbbd15c8718c9cbbe9b198775e6" name="aa1451fbbd15c8718c9cbbe9b198775e6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTerminal</b> = false</td></tr>
-<tr class="separator:aa1451fbbd15c8718c9cbbe9b198775e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/trie/<a class="el" href="_trie_node_8h_source.html">TrieNode.h</a></li>
