@@ -17,5 +17,7 @@ public:
 
     ~Correction();
 
+    vector<pair<Word *, unsigned int>> findCandidates(Word &word);
+
     vector<pair<Word *, unsigned int>> findCandidates(const string &word);
 };

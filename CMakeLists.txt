@@ -42,7 +42,7 @@ add_executable(
         src/correction/Correction.cpp
         src/correction/Correction.h
         tests/WordTest.cpp
-        tests/TrieTest.cpp)
+        tests/SpellingTest.cpp tests/TestsEnvironment.h)
 
 # Now simply link against gtest or gtest_main as needed. Eg
 target_link_libraries(tests_run gtest_main)

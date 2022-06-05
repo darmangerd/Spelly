@@ -17,8 +17,7 @@ Correction::~Correction() {
     delete[] this->wordsChunks;
 }
 
-vector<pair<Word *, unsigned int>> Correction::findCandidates(const string &word) {
-    Word wordToFind(word);
+vector<pair<Word *, unsigned int>> Correction::findCandidates(Word &wordToFind) {
     unsigned int minDistance = INT32_MAX;
     vector<pair<Word *, unsigned int>> candidates;
     mutex m;
@@ -51,4 +50,9 @@ vector<pair<Word *, unsigned int>> Correction::findCandidates(const string &word
     }
 
     return candidates;
+}
+
+vector<pair<Word *, unsigned int>> Correction::findCandidates(const string &word) {
+    Word wordToFind(word);
+    return this->findCandidates(wordToFind);
 }
