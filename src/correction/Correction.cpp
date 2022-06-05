@@ -13,6 +13,10 @@ Correction::Correction(vector<Word *> words, unsigned int numberOfThreads) : num
     this->wordsChunks = Utils::createChunks(words, numberOfThreads);
 }
 
+Correction::~Correction() {
+    delete[] this->wordsChunks;
+}
+
 vector<pair<Word *, unsigned int>> Correction::findCandidates(const string &word) {
     Word wordToFind(word);
     unsigned int minDistance = INT32_MAX;

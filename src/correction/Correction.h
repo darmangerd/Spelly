@@ -15,5 +15,7 @@ private:
 public:
     explicit Correction(vector<Word *> words, unsigned int numberOfThreads);
 
+    ~Correction();
+
     vector<pair<Word *, unsigned int>> findCandidates(const string &word);
 };

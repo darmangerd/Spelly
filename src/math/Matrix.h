@@ -31,6 +31,13 @@ public:
         }
     }
 
+    ~Matrix() {
+        for (int i = 0; i < this->height; ++i) {
+            delete[] this->matrix[i];
+        }
+        delete[] this->matrix;
+    }
+
     T get(unsigned int i, unsigned int j) const {
         return this->matrix[i][j];
     }
@@ -55,11 +62,8 @@ public:
     }
 
     template<typename U>
-    friend ostream &operator<<(ostream &os, const Matrix<U> &matrix);
+    friend ostream &operator<<(ostream &os, const Matrix<U> &matrix) {
+        os << matrix.toString();
+        return os;
+    }
 };
-
-template<typename T>
-ostream &operator<<(ostream &os, const Matrix<T> &matrix) {
-    os << matrix.toString();
-    return os;
-}

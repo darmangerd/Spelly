@@ -24,6 +24,8 @@ private:
 public:
     explicit Trie(string alphabet, const vector<Word *> &words);
 
+    ~Trie();
+
     void insert(const Word &word) const;
 
     Word *search(const string &word) const;

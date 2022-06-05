@@ -13,6 +13,10 @@ using namespace std;
 template<class T>
 class TrieNode {
 private:
+    TrieNode<T> *parent;
+    TrieNode<T> **children;
+    T data;
+    bool isTerminal = false;
     unsigned int alphabetSize = 26;
 
     void initChildren() {
@@ -33,16 +37,45 @@ public:
     }
 
     ~TrieNode() {
-        delete[] children;
+        for (unsigned int i = 0; i < this->alphabetSize; ++i) {
+            if (this->children[i] != nullptr) {
+                delete this->children[i];
+            }
+        }
+
+        delete this->children;
+    }
+
+    TrieNode<T> *getParent() const {
+        return this->parent;
+    }
+
+    TrieNode<T> **getChildren() const {
+        return this->children;
+    }
+
+    TrieNode<T> *getChild(unsigned int index) const {
+        return this->children[index];
+    }
+
+    void setChild(unsigned int index, TrieNode<T> *child) {
+        this->children[index] = child;
+    }
+
+    T getData() const {
+        return this->data;
+    }
+
+    bool getIsTerminal() const {
+        return this->isTerminal;
+    }
+
+    void setIsTerminal(bool isTerminal) {
+        this->isTerminal = isTerminal;
     }
 
     void setAlphabetSize(unsigned int alphabetSize) {
         this->alphabetSize = alphabetSize;
         initChildren();
     }
-
-    TrieNode<T> *parent;
-    TrieNode<T> **children;
-    T data;
-    bool isTerminal = false;
 };
