@@ -2,16 +2,20 @@ cmake_minimum_required(VERSION 3.18)
 project(spelly)
 
 set(CMAKE_CXX_STANDARD 20)
+find_package(Threads REQUIRED)
 
 include(FetchContent)
 FetchContent_Declare(
         googletest
         URL https://github.com/google/googletest/archive/f079775276a99fd4373569bf5761052a01844270.zip
 )
-# For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/datas/french.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/datas/test.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+# Spelly app
 add_executable(
         spelly
         src/main.cpp
@@ -27,9 +31,14 @@ add_executable(
         src/correction/Correction.cpp
         src/correction/Correction.h
 )
+target_link_libraries(
+        spelly
+        Threads::Threads
+)
 
+# Tests
 add_executable(
-        tests_run
+        spelly_tests
         src/word/Word.h
         src/word/Word.cpp
         src/math/Matrix.cpp
@@ -44,7 +53,10 @@ add_executable(
         tests/WordTest.cpp
         tests/SpellingTest.cpp
         tests/MatrixTest.cpp
-        tests/UtilsTest.cpp)
-
-# Now simply link against gtest or gtest_main as needed. Eg
-target_link_libraries(tests_run gtest_main)
+        tests/UtilsTest.cpp
+)
+target_link_libraries(
+        spelly_tests
+        gtest_main
+        Threads::Threads
+)

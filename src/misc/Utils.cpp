@@ -6,6 +6,7 @@
 #include <vector>
 #include <set>
 #include <array>
+#include <algorithm>
 #include "Utils.h"
 
 string Utils::extractSymbolsFromFile(const string &path) {
