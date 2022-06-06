@@ -29,10 +29,6 @@ public:
         TestsEnvironment::trie = new Trie(alphabet, words);
         TestsEnvironment::correction = new Correction(words, 10);
     }
-
-    void TearDown() override {
-        delete TestsEnvironment::trie;
-    }
 };
 
 Trie *TestsEnvironment::trie;
