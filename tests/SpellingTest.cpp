@@ -17,7 +17,7 @@ public:
     void SetUp() override {
         TestsEnvironment::trie = nullptr;
 
-        string filePath = "french.txt";
+        string filePath = "french_test.txt";
 
         vector<Word *> words;
         auto insertToWords = [&](const string &line, long index) {
@@ -55,7 +55,7 @@ TEST(Trie, shouldAutocompleteWithXWords) {
     auto suggestions = TestsEnvironment::trie->autocomplete(prefix, nbWords);
 
     for (int i = 0; i < nbWords; ++i) {
-        if (suggestions != nullptr) {
+        if (suggestions[i] != nullptr) {
             string wordPrefix = suggestions[i]->getText().substr(0, prefix.size());
             EXPECT_EQ(prefix, wordPrefix);
         }
