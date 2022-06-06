@@ -21,5 +21,4 @@ build-job:
 test-job:
   stage: test
   script:
-    - ulimit -S -s 99999999999999
     - ./spelly_tests
