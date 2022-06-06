@@ -1,12 +1,11 @@
+image: gcc
+
 stages:
   - build
   - test
 
 build-job:
   stage: build
-  image: gcc
-  tags:
-    - alpine-docker
   artifacts:
     paths:
       - spelly_tests
