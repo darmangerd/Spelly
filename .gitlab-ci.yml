@@ -10,7 +10,7 @@ build-job:
     paths:
       - spelly_tests
       - spelly
-      - french_reduced.txt
+      - french_test.txt
       - french.txt
       - test.txt
   script:
