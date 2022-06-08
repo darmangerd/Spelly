@@ -14,8 +14,8 @@ using namespace std;
 
 class Trie {
 private:
-    TrieNode<Word *> *root;
-    string alphabet;
+    TrieNode<Word *> *root_;
+    string alphabet_;
 
     void recursiveAutocomplete(TrieNode<Word *> *currentWord, Word **suggestions, unsigned int &wordCount,
                                unsigned int maxWords,
@@ -28,9 +28,9 @@ public:
 
     void insert(const Word &word) const;
 
-    Word *search(const string &word) const;
+    [[nodiscard]] Word *search(const string &word) const;
 
-    Word **autocomplete(const string &word, unsigned int maxWords = 3, unsigned int maxDepth = 10) const;
+    [[nodiscard]] Word **autocomplete(const string &word, unsigned int maxWords = 3, unsigned int maxDepth = 10) const;
 
     friend ostream &operator<<(ostream &os, const Trie &t);
 };

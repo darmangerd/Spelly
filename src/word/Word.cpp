@@ -18,7 +18,7 @@ unsigned int Word::levenshteinDistance(Word &word) {
 
     for (unsigned int i = 1; i < this->length() + 1; ++i) {
         for (unsigned int j = 1; j < word.length() + 1; ++j) {
-            if (this->text[i - 1] == word.text[j - 1]) {
+            if (this->text_[i - 1] == word.text_[j - 1]) {
                 m.set(i, j, m.get(i - 1, j - 1));
             } else {
                 auto a = m.get(i, j - 1);
@@ -44,7 +44,7 @@ bool operator==(const Word &left, const Word &right) {
 }
 
 bool operator<(const Word &left, const Word &right) {
-    return left.text.length() < right.text.length();
+    return left.text_.length() < right.text_.length();
 }
 
 ostream &operator<<(ostream &os, const Word &w) {

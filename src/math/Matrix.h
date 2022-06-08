@@ -14,65 +14,65 @@ using namespace std;
 template<class T>
 class Matrix {
 private:
-    T **matrix;
-    unsigned long columns;
-    unsigned long rows;
+    T **matrix_;
+    unsigned long columns_;
+    unsigned long rows_;
 
 public:
 
     /**
-     * Declare a matrix with a default value
-     * @param rows The number of desired rows
-     * @param columns The number of desired columns
-     * @param defaultValue The value of each element in the matrix
+     * Declare a matrix_ with a default value
+     * @param rows The number of desired rows_
+     * @param columns The number of desired columns_
+     * @param defaultValue The value of each element in the matrix_
      */
-    Matrix(const unsigned long rows, const unsigned long columns, T defaultValue) : columns(columns), rows(rows) {
-        this->matrix = new T *[rows];
+    Matrix(const unsigned long rows, const unsigned long columns, T defaultValue) : columns_(columns), rows_(rows) {
+        this->matrix_ = new T *[rows];
 
         for (unsigned int rowIndex = 0; rowIndex < rows; rowIndex++) {
-            this->matrix[rowIndex] = new T[columns];
+            this->matrix_[rowIndex] = new T[columns];
 
             for (unsigned int columnIndex = 0; columnIndex < columns; columnIndex++) {
-                this->matrix[rowIndex][columnIndex] = defaultValue;
+                this->matrix_[rowIndex][columnIndex] = defaultValue;
             }
         }
     }
 
     /**
-     * Declare a matrix with a function based on the columnIndex and the rowIndex, it should returns the value of the element at M(i, j)
+     * Declare a matrix_ with a function based on the columnIndex and the rowIndex, it should returns the value of the element at M(i, j)
      * @tparam F The function type
-     * @param rows The number of desired rows
-     * @param columns The number of desired columns
+     * @param rows The number of desired rows_
+     * @param columns The number of desired columns_
      * @param f The function that returns the value of the element at M(i, j)
      */
     template<typename F>
-    Matrix(const unsigned long rows, const unsigned long columns, F &f) : columns(columns), rows(rows) {
-        this->matrix = new T *[rows];
+    Matrix(const unsigned long rows, const unsigned long columns, F &f) : columns_(columns), rows_(rows) {
+        this->matrix_ = new T *[rows];
 
         for (unsigned int rowIndex = 0; rowIndex < rows; rowIndex++) {
-            this->matrix[rowIndex] = new T[columns];
+            this->matrix_[rowIndex] = new T[columns];
 
             for (unsigned int columnIndex = 0; columnIndex < columns; columnIndex++) {
-                this->matrix[rowIndex][columnIndex] = f(rowIndex, columnIndex);
+                this->matrix_[rowIndex][columnIndex] = f(rowIndex, columnIndex);
             }
         }
     }
 
     ~Matrix() {
-        for (int rowIndex = 0; rowIndex < this->rows; rowIndex++) {
-            delete[] this->matrix[rowIndex];
+        for (int rowIndex = 0; rowIndex < this->rows_; rowIndex++) {
+            delete[] this->matrix_[rowIndex];
         }
-        delete[] this->matrix;
+        delete[] this->matrix_;
     }
 
     /**
-     * Get the element of the matrix at M(columnIndex, rowIndex)
+     * Get the element of the matrix_ at M(columnIndex, rowIndex)
      * @param columnIndex The column index (x)
      * @param rowIndex The row index (y)
      * @return The item at M(columnIndex, rowIndex)
      */
-    T get(unsigned long columnIndex, unsigned long rowIndex) const {
-        return this->matrix[rowIndex][columnIndex];
+    [[nodiscard]] T get(unsigned long columnIndex, unsigned long rowIndex) const {
+        return this->matrix_[rowIndex][columnIndex];
     }
 
     /**
@@ -82,32 +82,32 @@ public:
      * @param value The value
      */
     void set(unsigned long columnIndex, unsigned long rowIndex, T value) {
-        this->matrix[rowIndex][columnIndex] = value;
+        this->matrix_[rowIndex][columnIndex] = value;
     }
 
     /**
-     * Get the number of columns of the matrix
-     * @return The number of columns of the matrix
+     * Get the number of columns_ of the matrix_
+     * @return The number of columns_ of the matrix_
      */
-    unsigned long getWidth() const {
-        return columns;
+    [[nodiscard]] unsigned long getWidth() const {
+        return columns_;
     }
 
     /**
-     * Get the number of rows of the matrix
-     * @return The number of rows of the matrix
+     * Get the number of rows_ of the matrix_
+     * @return The number of rows_ of the matrix_
      */
-    unsigned long getHeight() const {
-        return rows;
+    [[nodiscard]] unsigned long getHeight() const {
+        return rows_;
     }
 
-    string toString() const {
+    [[nodiscard]] string toString() const {
         stringstream ss;
 
-        ss << "Matrix dimensions: " << this->columns << "x" << this->rows << endl;
+        ss << "Matrix dimensions: " << this->columns_ << "x" << this->rows_ << endl;
 
-        for (int rowIndex = 0; rowIndex < this->rows; rowIndex++) {
-            for (int columnIndex = 0; columnIndex < this->columns; columnIndex++) {
+        for (int rowIndex = 0; rowIndex < this->rows_; rowIndex++) {
+            for (int columnIndex = 0; columnIndex < this->columns_; columnIndex++) {
                 ss << this->get(columnIndex, rowIndex) << " ";
             }
             ss << endl;

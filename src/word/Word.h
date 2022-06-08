@@ -11,16 +11,16 @@ using namespace std;
 
 class Word {
 private:
-    string text;
+    string text_;
 
 public:
-    explicit Word(string text) : text(std::move(text)) {}
+    explicit Word(string text) : text_(std::move(text)) {}
 
-    string getText() const { return this->text; }
+    [[nodiscard]] string getText() const { return this->text_; }
 
-    unsigned int length() const { return this->text.size(); }
+    [[nodiscard]] unsigned int length() const { return this->text_.size(); }
 
-    void setText(string text) { this->text = text; }
+    void setText(string text) { this->text_ = text; }
 
     unsigned int levenshteinDistance(Word &word);
 

@@ -5,8 +5,8 @@
 #include <utility>
 #include "Trie.h"
 
-Trie::Trie(string alphabet, const vector<Word *> &words) : alphabet(std::move(alphabet)) {
-    this->root = new TrieNode<Word *>(nullptr, false, this->alphabet.length());
+Trie::Trie(string alphabet, const vector<Word *> &words) : alphabet_(std::move(alphabet)) {
+    this->root_ = new TrieNode<Word *>(nullptr, false, this->alphabet_.length());
 
     for (auto word: words) {
         this->insert(*word);
@@ -14,14 +14,14 @@ Trie::Trie(string alphabet, const vector<Word *> &words) : alphabet(std::move(al
 }
 
 Trie::~Trie() {
-    delete root;
+    delete root_;
 }
 
 void Trie::insert(const Word &word) const {
-    auto current = this->root;
+    auto current = this->root_;
 
     for (unsigned int i = 0; i < word.length(); i++) {
-        auto indexInAlphabet = this->alphabet.find(word.getText()[i]);
+        auto indexInAlphabet = this->alphabet_.find(word.getText()[i]);
 
         if (indexInAlphabet == string::npos) continue;
 
@@ -31,7 +31,7 @@ void Trie::insert(const Word &word) const {
                     new TrieNode<Word *>(
                             new Word(word.getText().substr(0, i + 1)),
                             i == word.length() - 1,
-                            this->alphabet.length()
+                            this->alphabet_.length()
                     )
             );
         } else if (i == word.length() - 1) {
@@ -53,7 +53,7 @@ Trie::recursiveAutocomplete(
 ) const {
     if (currentWord == nullptr) return;
 
-    for (unsigned int i = 0; i < this->alphabet.length(); i++) {
+    for (unsigned int i = 0; i < this->alphabet_.length(); i++) {
         if (currentWord->getChild(i) == nullptr) continue;
 
         if (currentWord->getChild(i)->getIsTerminal()) {
@@ -72,17 +72,17 @@ Trie::recursiveAutocomplete(
         return;
     }
 
-    for (unsigned int i = 0; i < this->alphabet.length(); i++) {
+    for (unsigned int i = 0; i < this->alphabet_.length(); i++) {
         recursiveAutocomplete(currentWord->getChild(i), suggestions, wordCount, maxWords,
                               depth, maxDepth);
     }
 }
 
 Word *Trie::search(const string &word) const {
-    auto current = this->root;
+    auto current = this->root_;
 
     for (auto i: word) {
-        auto indexInAlphabet = this->alphabet.find(i);
+        auto indexInAlphabet = this->alphabet_.find(i);
 
         if (current->getChild(indexInAlphabet) == nullptr) {
             return nullptr;
@@ -99,13 +99,13 @@ Word *Trie::search(const string &word) const {
 }
 
 Word **Trie::autocomplete(const string &word, unsigned int maxWords, unsigned int maxDepth) const {
-    auto current = this->root;
+    auto current = this->root_;
 
     auto *suggestions = Utils::initializeArray<Word *>(maxWords, nullptr);
     unsigned int wordCount = 0;
 
     for (auto i: word) {
-        auto indexInAlphabet = this->alphabet.find(i);
+        auto indexInAlphabet = this->alphabet_.find(i);
 
         if (current->getChild(indexInAlphabet) == nullptr) {
             return suggestions;

@@ -2,22 +2,22 @@
 // Created by owen on 04.06.22.
 //
 
-#pragma one
+#pragma once
 
 #include "../word/Word.h"
 #include <vector>
 
 class Correction {
 private:
-    vector<vector<Word *>> wordsChunks;
-    unsigned int numberOfThreads;
+    vector<vector<Word *>> wordsChunks_;
+    unsigned int numberOfThreads_;
 
 public:
     explicit Correction(vector<Word *> words, unsigned int numberOfThreads);
 
     ~Correction() = default;
 
-    vector<pair<Word *, unsigned int>> findCandidates(Word &word);
+    [[nodiscard]] vector<pair<Word *, unsigned int>> findCandidates(Word &word);
 
-    vector<pair<Word *, unsigned int>> findCandidates(const string &word);
+    [[nodiscard]] vector<pair<Word *, unsigned int>> findCandidates(const string &word);
 };

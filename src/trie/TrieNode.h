@@ -13,22 +13,22 @@ using namespace std;
 template<class T>
 class TrieNode {
 private:
-    TrieNode<T> *parent;
-    TrieNode<T> **children;
-    T data;
-    bool isTerminal = false;
-    unsigned int alphabetSize = 26;
+    TrieNode<T> *parent_;
+    TrieNode<T> **children_;
+    T data_;
+    bool isTerminal_ = false;
+    unsigned int alphabetSize_ = 26;
 
     void initChildren() {
-        this->children = new TrieNode<T> *[this->alphabetSize];
-        for (unsigned int i = 0; i < this->alphabetSize; ++i) {
-            this->children[i] = nullptr;
+        this->children_ = new TrieNode<T> *[this->alphabetSize_];
+        for (unsigned int i = 0; i < this->alphabetSize_; ++i) {
+            this->children_[i] = nullptr;
         }
     }
 
 public:
-    TrieNode(T data, bool isTerminal, unsigned int alphabetSize) : data(data), isTerminal(isTerminal),
-                                                                   alphabetSize(alphabetSize) {
+    TrieNode(T data, bool isTerminal, unsigned int alphabetSize) : data_(data), isTerminal_(isTerminal),
+                                                                   alphabetSize_(alphabetSize) {
         initChildren();
     }
 
@@ -37,45 +37,45 @@ public:
     }
 
     ~TrieNode() {
-        for (unsigned int i = 0; i < this->alphabetSize; ++i) {
-            if (this->children[i] != nullptr) {
-                delete this->children[i];
+        for (unsigned int i = 0; i < this->alphabetSize_; ++i) {
+            if (this->children_[i] != nullptr) {
+                delete this->children_[i];
             }
         }
 
-        delete this->children;
+        delete this->children_;
     }
 
-    TrieNode<T> *getParent() const {
-        return this->parent;
+    [[nodiscard]] TrieNode<T> *getParent() const {
+        return this->parent_;
     }
 
-    TrieNode<T> **getChildren() const {
-        return this->children;
+    [[nodiscard]] TrieNode<T> **getChildren() const {
+        return this->children_;
     }
 
-    TrieNode<T> *getChild(unsigned int index) const {
-        return this->children[index];
+    [[nodiscard]] TrieNode<T> *getChild(unsigned int index) const {
+        return this->children_[index];
     }
 
     void setChild(unsigned int index, TrieNode<T> *child) {
-        this->children[index] = child;
+        this->children_[index] = child;
     }
 
-    T getData() const {
-        return this->data;
+    [[nodiscard]] T getData() const {
+        return this->data_;
     }
 
-    bool getIsTerminal() const {
-        return this->isTerminal;
+    [[nodiscard]] bool getIsTerminal() const {
+        return this->isTerminal_;
     }
 
     void setIsTerminal(bool isTerminal) {
-        this->isTerminal = isTerminal;
+        this->isTerminal_ = isTerminal;
     }
 
     void setAlphabetSize(unsigned int alphabetSize) {
-        this->alphabetSize = alphabetSize;
+        this->alphabetSize_ = alphabetSize;
         initChildren();
     }
 };

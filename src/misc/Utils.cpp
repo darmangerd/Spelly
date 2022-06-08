@@ -5,7 +5,6 @@
 #include <sstream>
 #include <vector>
 #include <set>
-#include <array>
 #include <algorithm>
 #include "Utils.h"
 
@@ -14,7 +13,7 @@ string Utils::extractSymbolsFromFile(const string &path) {
 
     auto addCharToSymbols = [&symbols](char c, long index) {
         if (c != '\n') {
-            symbols.insert(tolower(c));
+            symbols.insert((char) tolower(c));
         }
     };
 

@@ -3,7 +3,7 @@
 // Created by owen on 19.05.22.
 //
 
-#pragma one
+#pragma once
 
 #include <string>
 #include <fstream>
@@ -61,7 +61,7 @@ public:
      * @return The array of type T with the specified size filled with the default value
      */
     template<class T>
-    static T *initializeArray(unsigned long size, T defaultValue) {
+    [[nodiscard]] static T *initializeArray(unsigned long size, T defaultValue) {
         T *arr = new T[size];
 
         for (int i = 0; i < size; i++) {
@@ -80,7 +80,7 @@ public:
      * @return The array of type T with the specified size filled with the default value
      */
     template<class T, typename F>
-    static T *initializeArray(unsigned long size, F &f) {
+    [[nodiscard]] static T *initializeArray(unsigned long size, F &f) {
         T *arr = new T[size];
 
         for (int i = 0; i < size; i++) {
@@ -99,7 +99,7 @@ public:
      * @return The sliced vector
      */
     template<class T>
-    static vector<T> sliceVector(vector<T> v, unsigned long start, unsigned long end) {
+    [[nodiscard]] static vector<T> sliceVector(vector<T> v, unsigned long start, unsigned long end) {
         vector<T> vSlice(end - start + 1);
         copy(v.begin() + start, v.begin() + end + 1, vSlice.begin());
 
@@ -114,7 +114,7 @@ public:
      * @return The <numberOfChunks> smaller vectors
      */
     template<class T>
-    static vector<vector<T>> createChunks(vector<T> v, unsigned long numberOfChunks) {
+    [[nodiscard]] static vector<vector<T>> createChunks(vector<T> v, unsigned long numberOfChunks) {
         if (numberOfChunks > v.size()) {
             numberOfChunks = v.size();
         }
@@ -141,12 +141,12 @@ public:
      * @param path The file path
      * @return The different symbols that are present in the file as a string
      */
-    static string extractSymbolsFromFile(const string &path);
+    [[nodiscard]] static string extractSymbolsFromFile(const string &path);
 
     /**
      * Try to open a file from the file system
      * @param path The file path
      * @return An ifstream of the file
      */
-    static ifstream openFile(const string &path);
+    [[nodiscard]] static ifstream openFile(const string &path);
 };

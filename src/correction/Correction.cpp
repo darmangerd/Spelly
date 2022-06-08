@@ -9,9 +9,9 @@
 
 using namespace std;
 
-Correction::Correction(vector<Word *> words, unsigned int numberOfThreads) : numberOfThreads(numberOfThreads) {
-    this->wordsChunks = Utils::createChunks(words, numberOfThreads);
-    this->numberOfThreads = wordsChunks.size();
+Correction::Correction(vector<Word *> words, unsigned int numberOfThreads) : numberOfThreads_(numberOfThreads) {
+    this->wordsChunks_ = Utils::createChunks(std::move(words), numberOfThreads);
+    this->numberOfThreads_ = wordsChunks_.size();
 }
 
 vector<pair<Word *, unsigned int>> Correction::findCandidates(Word &wordToFind) {
@@ -37,12 +37,12 @@ vector<pair<Word *, unsigned int>> Correction::findCandidates(Word &wordToFind) 
         }
     };
 
-    thread threads[this->numberOfThreads];
-    for (unsigned int i = 0; i < numberOfThreads; i++) {
-        threads[i] = thread(findCandidates, &this->wordsChunks[i]);
+    thread threads[this->numberOfThreads_];
+    for (unsigned int i = 0; i < numberOfThreads_; i++) {
+        threads[i] = thread(findCandidates, &this->wordsChunks_[i]);
     }
 
-    for (unsigned int i = 0; i < numberOfThreads; i++) {
+    for (unsigned int i = 0; i < numberOfThreads_; i++) {
         threads[i].join();
     }
 
