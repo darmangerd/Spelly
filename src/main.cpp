@@ -3,6 +3,7 @@
 #include "word/Word.h"
 #include "trie/Trie.h"
 #include "correction/Correction.h"
+#include "gui/interaction.h"
 
 using namespace std;
 
@@ -57,6 +58,7 @@ void correct(const string &word, Correction &c, Trie &t) {
 }
 
 int main() {
+    // Create a Trie with the words in the file
     string filePath = "french.txt";
     cout << "Creating Trie for dictionary: " << filePath << "... ";
 
@@ -72,6 +74,19 @@ int main() {
 
     cout << "done" << endl << endl;
 
+    // Interaction with the user for writing words
+    string finalText = "";
+    string userInput = "";
+    do {
+        finalText = interaction::run(t, c);
+        cout << "\nFinal text: " << finalText << endl;
+
+        cout << "\nDo you want to restart? (y/n) ";
+        cin >> userInput;
+    }
+    while(userInput == "y");
+
+    /*
     correct("asjdhg", c, t);
 
     cout << endl;
@@ -82,7 +97,7 @@ int main() {
     cout << endl;
 
     autosuggest("dé", t);
-    autosuggest("daaaaé", t);
+    autosuggest("daaaaé", t);*/
 
     return EXIT_SUCCESS;
 }
