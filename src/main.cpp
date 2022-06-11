@@ -3,7 +3,7 @@
 #include "word/Word.h"
 #include "trie/Trie.h"
 #include "correction/Correction.h"
-#include "gui/interaction.h"
+#include "gui/Interaction.h"
 
 using namespace std;
 
@@ -78,7 +78,7 @@ int main() {
     string finalText = "";
     string userInput = "";
     do {
-        finalText = interaction::run(t, c);
+        finalText = Interaction::run(t, c);
         cout << "\nFinal text: " << finalText << endl;
 
         cout << "\nDo you want to restart? (y/n) ";

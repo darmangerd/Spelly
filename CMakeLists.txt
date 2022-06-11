@@ -31,6 +31,8 @@ add_executable(
         src/misc/Utils.h
         src/correction/Correction.cpp
         src/correction/Correction.h
+        src/gui/Interaction.cpp
+        src/gui/Interaction.h
 )
 target_link_libraries(
         spelly
