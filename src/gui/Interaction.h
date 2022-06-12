@@ -32,5 +32,5 @@ private:
      * @param t Trie to use for searching.
      * @param c Correction to use for corrections.
      */
-    static void check(string &word, Trie &t, Correction &c);
+    static string check(string &word, Trie &t, Correction &c);
 };

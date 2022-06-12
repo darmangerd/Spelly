@@ -17,22 +17,20 @@ Correction::Correction(vector<Word *> words, unsigned int numberOfThreads) : num
 vector<pair<Word *, unsigned int>> Correction::findCandidates(Word &wordToFind) {
     unsigned int minDistance = INT32_MAX;
     vector<pair<Word *, unsigned int>> candidates;
-    mutex m;
-
     auto findCandidates = [&](vector<Word *> *words) {
         for (auto word: *words) {
             auto distance = wordToFind.levenshteinDistance(*word);
 
             if (distance < minDistance) {
-                m.lock();
+                pthread_mutex_lock(&mutex1);
                 candidates.clear();
                 minDistance = distance;
                 candidates.emplace_back(make_pair(word, distance));
-                m.unlock();
+                pthread_mutex_unlock(&mutex1);
             } else if (distance == minDistance) {
-                m.lock();
+                pthread_mutex_lock(&mutex1);
                 candidates.emplace_back(make_pair(word, distance));
-                m.unlock();
+                pthread_mutex_unlock(&mutex1);
             }
         }
     };

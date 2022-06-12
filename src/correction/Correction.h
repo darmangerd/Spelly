@@ -11,6 +11,7 @@ class Correction {
 private:
     vector<vector<Word *>> wordsChunks_;
     unsigned int numberOfThreads_;
+    pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
 
 public:
     explicit Correction(vector<Word *> words, unsigned int numberOfThreads);

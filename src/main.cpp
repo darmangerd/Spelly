@@ -69,7 +69,7 @@ int main() {
     Utils::readFileLineByLine(filePath, insertToWords);
     string alphabet = Utils::extractSymbolsFromFile(filePath);
 
-    Correction c(words, 100);
+    Correction c(words, 1);
     Trie t(alphabet, words);
 
     cout << "done" << endl << endl;
@@ -79,9 +79,9 @@ int main() {
     string userInput = "";
     do {
         finalText = Interaction::run(t, c);
-        cout << "\nFinal text: " << finalText << endl;
+        cout << endl << "Final text: " << finalText << endl;
 
-        cout << "\nDo you want to restart? (y/n) ";
+        cout << endl << "Do you want to restart? (y/n)" << endl;
         cin >> userInput;
     }
     while(userInput == "y");
