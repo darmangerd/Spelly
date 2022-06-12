@@ -20,8 +20,13 @@ public:
 
     [[nodiscard]] unsigned int length() const { return this->text_.size(); }
 
-    void setText(string text) { this->text_ = text; }
+    void setText(string text) { this->text_ = std::move(text); }
 
+    /**
+     * Get the Levenshtein distance with an another word
+     * @param word The other word
+     * @return The Levenshtein distance between the current and the other word
+     */
     unsigned int levenshteinDistance(Word &word);
 
     friend bool operator==(const Word &left, const Word &right);

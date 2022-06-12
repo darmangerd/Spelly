@@ -54,9 +54,10 @@ string Interaction::run(Trie &t, Correction &c) {
     cout << "-- Welcome to Spelly the word checker --" << endl;
     cout << "- Write a word to correct/autocomplete " << endl;
     cout << "- Write \"/exit\" to quit and get your corrected text" << endl;
-    string text = "";
-    string word = "";
-    for (;;) {
+
+    string text;
+    string word;
+    while (true) {
         cout << "Enter a word to check : ";
         cin >> word;
         if (word != QUIT_KEY) {
@@ -66,5 +67,6 @@ string Interaction::run(Trie &t, Correction &c) {
             break;
         }
     }
+
     return text + ".";
 }

@@ -69,22 +69,21 @@ int main() {
     Utils::readFileLineByLine(filePath, insertToWords);
     string alphabet = Utils::extractSymbolsFromFile(filePath);
 
-    Correction c(words, 1);
+    Correction c(words, 100);
     Trie t(alphabet, words);
 
     cout << "done" << endl << endl;
 
     // Interaction with the user for writing words
-    string finalText = "";
-    string userInput = "";
+    string finalText;
+    string userInput;
     do {
         finalText = Interaction::run(t, c);
         cout << endl << "Final text: " << finalText << endl;
 
         cout << endl << "Do you want to restart? (y/n)" << endl;
         cin >> userInput;
-    }
-    while(userInput == "y");
+    } while (userInput == "y");
 
     /*
     correct("asjdhg", c, t);

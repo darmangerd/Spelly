@@ -58,12 +58,7 @@ public:
         }
     }
 
-    ~Matrix() {
-        for (int rowIndex = 0; rowIndex < this->rows_; rowIndex++) {
-            delete[] this->matrix_[rowIndex];
-        }
-        delete[] this->matrix_;
-    }
+    ~Matrix() = default;
 
     /**
      * Get the element of the matrix_ at M(columnIndex, rowIndex)
