@@ -7,8 +7,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
+#include <limits>
 #include "../word/Word.h"
 #include "../trie/Trie.h"
 #include "../correction/Correction.h"
