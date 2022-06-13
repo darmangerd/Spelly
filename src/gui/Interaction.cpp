@@ -16,7 +16,7 @@ string Interaction::check(string &word, Trie &t, Correction &c) {
     unsigned int minCandidate = min(maxWords, int(candidates.size()));
 
     if (found == nullptr) {
-        cout << endl << "Correction : \"" << word << "\", candidates :" << endl;
+        cout << endl << "Correction: \"" << word << "\", candidates :" << endl;
         for (unsigned int i = 0; i < minCandidate; i++) {
             auto candidate = candidates[i];
             cout << i << ") " << *candidate.first << " (distance of " << candidate.second << ")" << endl;
@@ -27,7 +27,7 @@ string Interaction::check(string &word, Trie &t, Correction &c) {
     }
 
     // Autocomplete
-    cout << endl << "Autocompleting : \"" << word << "\"..." << endl;
+    cout << endl << "Autocompleting: \"" << word << "\"..." << endl;
     unsigned int minAutoComplete = min(maxWords, int(sizeof(suggestions)));
     unsigned int countAutocomplete = 0;
     for (unsigned int i = 0; i < minAutoComplete; i++) {
@@ -35,6 +35,10 @@ string Interaction::check(string &word, Trie &t, Correction &c) {
             cout << i + minCandidate << ") " << suggestions[i]->getText() << endl;
             countAutocomplete++;
         }
+    }
+
+    if (countAutocomplete <= 0) {
+        cout << "No autocompletion available for the word: \"" << word << "\"..." << endl;
     }
 
     cout << endl;
@@ -70,7 +74,7 @@ string Interaction::run(Trie &t, Correction &c) {
     string text;
     string word;
     while (true) {
-        cout << "Enter a word to check : ";
+        cout << "Enter a word to check: ";
         cin >> word;
         if (word != QUIT_KEY) {
             text += check(word, t, c);
