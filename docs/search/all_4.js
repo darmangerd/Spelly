@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['matrix_0',['Matrix',['../class_matrix.html',1,'Matrix&lt; T &gt;'],['../class_matrix.html#a4710c727bbc74f79659e9741c11c1085',1,'Matrix::Matrix(const unsigned long rows, const unsigned long columns, T defaultValue)'],['../class_matrix.html#a621456a204879585b84c6b5b0db55d55',1,'Matrix::Matrix(const unsigned long rows, const unsigned long columns, F &amp;f)']]]
+  ['get_0',['get',['../class_matrix.html#a9bfbfa6456eac3d6709bbb3708990a8d',1,'Matrix']]],
+  ['getheight_1',['getHeight',['../class_matrix.html#a0b31a9c0c04e506d33781cedd73e84b9',1,'Matrix']]],
+  ['getwidth_2',['getWidth',['../class_matrix.html#adbb7a1132e477264c37e82f2735df65b',1,'Matrix']]]
 ];

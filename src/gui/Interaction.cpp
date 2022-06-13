@@ -13,34 +13,46 @@ string Interaction::check(string &word, Trie &t, Correction &c) {
     auto suggestions = t.autocomplete(word, maxWords);
 
     // Correction
-    int minCandidate = min(maxWords, int(candidates.size()));
+    unsigned int minCandidate = min(maxWords, int(candidates.size()));
 
     if (found == nullptr) {
         cout << endl << "Correction : \"" << word << "\", candidates :" << endl;
-        for (int i = 0; i < minCandidate; i++) {
+        for (unsigned int i = 0; i < minCandidate; i++) {
             auto candidate = candidates[i];
             cout << i << ") " << *candidate.first << " (distance of " << candidate.second << ")" << endl;
         }
+    } else {
+        cout << "No correction for: \"" << word << "\", this word is correct" << endl;
+        minCandidate = 0;
     }
 
     // Autocomplete
     cout << endl << "Autocompleting : \"" << word << "\"..." << endl;
-    int minAutoComplete = min(maxWords, int(sizeof(suggestions)));
-    for (int i = 0; i < minAutoComplete; i++) {
+    unsigned int minAutoComplete = min(maxWords, int(sizeof(suggestions)));
+    unsigned int countAutocomplete = 0;
+    for (unsigned int i = 0; i < minAutoComplete; i++) {
         if (suggestions[i] != nullptr) {
             cout << i + minCandidate << ") " << suggestions[i]->getText() << endl;
-        } else {
-            cout << i + minCandidate << ") empty suggestion" << endl;
+            countAutocomplete++;
         }
     }
 
-    // Get user input for correction/autocomplete
-    int index = 0;
-    do {
-        cout << "Enter the number of the correction you want : ";
-        cin >> index;
+    cout << endl;
 
-    } while (index < 0 || index > minCandidate + minAutoComplete);
+    // Get user input for correction/autocomplete
+    unsigned int index = 0;
+    while (true) {
+        cout << "Enter the number of the correction/autocompletion you want: ";
+        if (cin >> index && index >= 0 && index < minCandidate + countAutocomplete) {
+            break;
+        } else {
+            cout << "Please enter a valid integer" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }
+
+    cout << endl << endl;
 
     if (index < minCandidate) {
         auto candidate = candidates[index];
@@ -51,9 +63,9 @@ string Interaction::check(string &word, Trie &t, Correction &c) {
 }
 
 string Interaction::run(Trie &t, Correction &c) {
-    cout << "-- Welcome to Spelly the word checker --" << endl;
-    cout << "- Write a word to correct/autocomplete " << endl;
-    cout << "- Write \"/exit\" to quit and get your corrected text" << endl;
+    cout << "============ Welcome to Spelly, the word checker ============" << endl;
+    cout << "- Write a word to correct/autocomplete" << endl;
+    cout << "- Write \"/exit\" to quit and get your corrected text" << endl << endl;
 
     string text;
     string word;

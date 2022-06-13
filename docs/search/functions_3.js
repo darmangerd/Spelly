@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initializearray_0',['initializeArray',['../class_utils.html#a9757726d4f9ba3d81d4057bbbee08a43',1,'Utils::initializeArray(unsigned long size, T defaultValue)'],['../class_utils.html#a16f586c0f453097f3dad0c35c029a126',1,'Utils::initializeArray(unsigned long size, F &amp;f)']]]
+  ['findcandidates_0',['findCandidates',['../class_correction.html#a4649f4f3b83b8252d96b0f04c3b84254',1,'Correction::findCandidates(Word &amp;word)'],['../class_correction.html#a5524049f91ee432fafa5142ea9439208',1,'Correction::findCandidates(const string &amp;word)']]]
 ];

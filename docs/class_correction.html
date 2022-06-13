@@ -74,13 +74,62 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aca1bc47ccd7818dff6ba578686747bbf"><td class="memItemLeft" align="right" valign="top"><a id="aca1bc47ccd7818dff6ba578686747bbf" name="aca1bc47ccd7818dff6ba578686747bbf"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Correction</b> (vector&lt; <a class="el" href="class_word.html">Word</a> * &gt; words, unsigned int numberOfThreads)</td></tr>
 <tr class="separator:aca1bc47ccd7818dff6ba578686747bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4649f4f3b83b8252d96b0f04c3b84254"><td class="memItemLeft" align="right" valign="top"><a id="a4649f4f3b83b8252d96b0f04c3b84254" name="a4649f4f3b83b8252d96b0f04c3b84254"></a>
-vector&lt; pair&lt; <a class="el" href="class_word.html">Word</a> *, unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>findCandidates</b> (<a class="el" href="class_word.html">Word</a> &amp;word)</td></tr>
+<tr class="memitem:a4649f4f3b83b8252d96b0f04c3b84254"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; <a class="el" href="class_word.html">Word</a> *, unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_correction.html#a4649f4f3b83b8252d96b0f04c3b84254">findCandidates</a> (<a class="el" href="class_word.html">Word</a> &amp;word)</td></tr>
 <tr class="separator:a4649f4f3b83b8252d96b0f04c3b84254"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5524049f91ee432fafa5142ea9439208"><td class="memItemLeft" align="right" valign="top"><a id="a5524049f91ee432fafa5142ea9439208" name="a5524049f91ee432fafa5142ea9439208"></a>
-vector&lt; pair&lt; <a class="el" href="class_word.html">Word</a> *, unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>findCandidates</b> (const string &amp;word)</td></tr>
+<tr class="memitem:a5524049f91ee432fafa5142ea9439208"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; <a class="el" href="class_word.html">Word</a> *, unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_correction.html#a5524049f91ee432fafa5142ea9439208">findCandidates</a> (const string &amp;word)</td></tr>
 <tr class="separator:a5524049f91ee432fafa5142ea9439208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5524049f91ee432fafa5142ea9439208" name="a5524049f91ee432fafa5142ea9439208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5524049f91ee432fafa5142ea9439208">&#9670;&nbsp;</a></span>findCandidates() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; pair&lt; <a class="el" href="class_word.html">Word</a> *, unsigned int &gt; &gt; Correction::findCandidates </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>word</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Find all the accurate candidates for a misspelled word </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>The misspelled word </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of words pointer and a their Levenshtein distance </dd></dl>
+
+</div>
+</div>
+<a id="a4649f4f3b83b8252d96b0f04c3b84254" name="a4649f4f3b83b8252d96b0f04c3b84254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4649f4f3b83b8252d96b0f04c3b84254">&#9670;&nbsp;</a></span>findCandidates() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; pair&lt; <a class="el" href="class_word.html">Word</a> *, unsigned int &gt; &gt; Correction::findCandidates </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_word.html">Word</a> &amp;&#160;</td>
+          <td class="paramname"><em>word</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Find all the accurate candidates for a misspelled word </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>The misspelled word </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of words pointer and a their Levenshtein distance </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/correction/<a class="el" href="_correction_8h_source.html">Correction.h</a></li>
 <li>src/correction/Correction.cpp</li>

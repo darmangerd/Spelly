@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['trie_0',['Trie',['../class_trie.html',1,'']]],
-  ['trienode_1',['TrieNode',['../class_trie_node.html',1,'']]],
-  ['trienode_3c_20word_20_2a_20_3e_2',['TrieNode&lt; Word * &gt;',['../class_trie_node.html',1,'']]]
+  ['openfile_0',['openFile',['../class_utils.html#a8d7a01afb08f9d347e7269e8dceb00db',1,'Utils']]]
 ];

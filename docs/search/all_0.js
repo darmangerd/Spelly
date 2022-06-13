@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['correction_0',['Correction',['../class_correction.html',1,'']]],
-  ['createchunks_1',['createChunks',['../class_utils.html#a2b7eafd627e657dcaa853fe7de6cb5ac',1,'Utils']]]
+  ['autocomplete_0',['autocomplete',['../class_trie.html#a4c555a1b99b35c5cbf548f94e5d4f79b',1,'Trie']]]
 ];

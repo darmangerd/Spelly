@@ -75,14 +75,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af324bd19d7e1cb6dd1a8856bec8b4bce"><td class="memItemLeft" align="right" valign="top"><a id="af324bd19d7e1cb6dd1a8856bec8b4bce" name="af324bd19d7e1cb6dd1a8856bec8b4bce"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Trie</b> (string alphabet, const vector&lt; <a class="el" href="class_word.html">Word</a> * &gt; &amp;words)</td></tr>
 <tr class="separator:af324bd19d7e1cb6dd1a8856bec8b4bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56098d267ba561750ba4fb6a767c0e49"><td class="memItemLeft" align="right" valign="top"><a id="a56098d267ba561750ba4fb6a767c0e49" name="a56098d267ba561750ba4fb6a767c0e49"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (const <a class="el" href="class_word.html">Word</a> &amp;word) const</td></tr>
+<tr class="memitem:a56098d267ba561750ba4fb6a767c0e49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trie.html#a56098d267ba561750ba4fb6a767c0e49">insert</a> (const <a class="el" href="class_word.html">Word</a> &amp;word) const</td></tr>
 <tr class="separator:a56098d267ba561750ba4fb6a767c0e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65c26c1ce727ac174dcc4c791a77f064"><td class="memItemLeft" align="right" valign="top"><a id="a65c26c1ce727ac174dcc4c791a77f064" name="a65c26c1ce727ac174dcc4c791a77f064"></a>
-<a class="el" href="class_word.html">Word</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>search</b> (const string &amp;word) const</td></tr>
+<tr class="memitem:a65c26c1ce727ac174dcc4c791a77f064"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_word.html">Word</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trie.html#a65c26c1ce727ac174dcc4c791a77f064">search</a> (const string &amp;word) const</td></tr>
 <tr class="separator:a65c26c1ce727ac174dcc4c791a77f064"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c555a1b99b35c5cbf548f94e5d4f79b"><td class="memItemLeft" align="right" valign="top"><a id="a4c555a1b99b35c5cbf548f94e5d4f79b" name="a4c555a1b99b35c5cbf548f94e5d4f79b"></a>
-<a class="el" href="class_word.html">Word</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>autocomplete</b> (const string &amp;word, unsigned int maxWords=3, unsigned int maxDepth=10) const</td></tr>
+<tr class="memitem:a4c555a1b99b35c5cbf548f94e5d4f79b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_word.html">Word</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trie.html#a4c555a1b99b35c5cbf548f94e5d4f79b">autocomplete</a> (const string &amp;word, unsigned int maxWords=3, unsigned int maxDepth=10) const</td></tr>
 <tr class="separator:a4c555a1b99b35c5cbf548f94e5d4f79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -91,6 +88,99 @@ Friends</h2></td></tr>
 ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;os, const <a class="el" href="class_trie.html">Trie</a> &amp;t)</td></tr>
 <tr class="separator:a200b1c8f169f337a259de0b5ba0e58fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4c555a1b99b35c5cbf548f94e5d4f79b" name="a4c555a1b99b35c5cbf548f94e5d4f79b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c555a1b99b35c5cbf548f94e5d4f79b">&#9670;&nbsp;</a></span>autocomplete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_word.html">Word</a> ** Trie::autocomplete </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>word</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>maxWords</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>maxDepth</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Find the best accurate word that begins with the partial word in the <a class="el" href="class_trie.html">Trie</a> data structure </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>The partial word to look for </td></tr>
+    <tr><td class="paramname">maxWords</td><td>The maximum number of words to find </td></tr>
+    <tr><td class="paramname">maxDepth</td><td>The max depth (it limits the complexity) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of word pointers with the length of &lt;maxWords&gt; </dd></dl>
+
+</div>
+</div>
+<a id="a56098d267ba561750ba4fb6a767c0e49" name="a56098d267ba561750ba4fb6a767c0e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56098d267ba561750ba4fb6a767c0e49">&#9670;&nbsp;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trie::insert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_word.html">Word</a> &amp;&#160;</td>
+          <td class="paramname"><em>word</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Insert a word into the <a class="el" href="class_trie.html">Trie</a> data structure </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>The word to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a65c26c1ce727ac174dcc4c791a77f064" name="a65c26c1ce727ac174dcc4c791a77f064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65c26c1ce727ac174dcc4c791a77f064">&#9670;&nbsp;</a></span>search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_word.html">Word</a> * Trie::search </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>word</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Search for a word inside the <a class="el" href="class_trie.html">Trie</a> data structure </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The word pointer if found, otherwise nullptr </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/trie/<a class="el" href="_trie_8h_source.html">Trie.h</a></li>
 <li>src/trie/Trie.cpp</li>

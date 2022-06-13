@@ -69,7 +69,7 @@ int main() {
     Utils::readFileLineByLine(filePath, insertToWords);
     string alphabet = Utils::extractSymbolsFromFile(filePath);
 
-    Correction c(words, 100);
+    Correction c(words, 128);
     Trie t(alphabet, words);
 
     cout << "done" << endl << endl;
@@ -85,18 +85,17 @@ int main() {
         cin >> userInput;
     } while (userInput == "y");
 
-    /*
-    correct("asjdhg", c, t);
+    // correct("asjdhg", c, t);
 
-    cout << endl;
+    // cout << endl;
 
-    searchInTrie("clément", t);
-    searchInTrie("asd", t);
+    // searchInTrie("clément", t);
+    // searchInTrie("asd", t);
 
-    cout << endl;
+    // cout << endl;
 
-    autosuggest("dé", t);
-    autosuggest("daaaaé", t);*/
+    // autosuggest("dé", t);
+    // autosuggest("daaaaé", t);
 
     return EXIT_SUCCESS;
 }

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['set_0',['set',['../class_matrix.html#ab8bcec1bc9f02c82d9c91ea4af3ba9b6',1,'Matrix']]],
-  ['slicevector_1',['sliceVector',['../class_utils.html#a148bb94c7d42b686faa53b1685374207',1,'Utils']]]
+  ['matrix_0',['Matrix',['../class_matrix.html#a4710c727bbc74f79659e9741c11c1085',1,'Matrix::Matrix(const unsigned long rows, const unsigned long columns, T defaultValue)'],['../class_matrix.html#a621456a204879585b84c6b5b0db55d55',1,'Matrix::Matrix(const unsigned long rows, const unsigned long columns, F &amp;f)']]]
 ];
