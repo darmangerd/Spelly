@@ -5,4 +5,5 @@ COPY . /spelly
 WORKDIR /spelly
 RUN cmake .
 RUN make
+
 CMD ./spelly_tests
