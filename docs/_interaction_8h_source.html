@@ -78,24 +78,25 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;../word/Word.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;../trie/Trie.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;../correction/Correction.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_interaction.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_interaction.html">Interaction</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_interaction.html#a969be7a7d702e611363f72c8d0a98fbf">run</a>(<a class="code hl_class" href="class_trie.html">Trie</a> &amp;t, <a class="code hl_class" href="class_correction.html">Correction</a> &amp;c);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> QUIT_KEY;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">static</span> <span class="keywordtype">string</span> check(<span class="keywordtype">string</span> &amp;word, <a class="code hl_class" href="class_trie.html">Trie</a> &amp;t, <a class="code hl_class" href="class_correction.html">Correction</a> &amp;c);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;../word/Word.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;../trie/Trie.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;../correction/Correction.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_interaction.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_interaction.html">Interaction</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_interaction.html#a969be7a7d702e611363f72c8d0a98fbf">run</a>(<a class="code hl_class" href="class_trie.html">Trie</a> &amp;t, <a class="code hl_class" href="class_correction.html">Correction</a> &amp;c);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> QUIT_KEY;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">static</span> <span class="keywordtype">string</span> check(<span class="keywordtype">string</span> &amp;word, <a class="code hl_class" href="class_trie.html">Trie</a> &amp;t, <a class="code hl_class" href="class_correction.html">Correction</a> &amp;c);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
 <div class="ttc" id="aclass_correction_html"><div class="ttname"><a href="class_correction.html">Correction</a></div><div class="ttdef"><b>Definition:</b> Correction.h:10</div></div>
-<div class="ttc" id="aclass_interaction_html"><div class="ttname"><a href="class_interaction.html">Interaction</a></div><div class="ttdef"><b>Definition:</b> Interaction.h:17</div></div>
+<div class="ttc" id="aclass_interaction_html"><div class="ttname"><a href="class_interaction.html">Interaction</a></div><div class="ttdef"><b>Definition:</b> Interaction.h:18</div></div>
 <div class="ttc" id="aclass_interaction_html_a969be7a7d702e611363f72c8d0a98fbf"><div class="ttname"><a href="class_interaction.html#a969be7a7d702e611363f72c8d0a98fbf">Interaction::run</a></div><div class="ttdeci">static string run(Trie &amp;t, Correction &amp;c)</div><div class="ttdoc">Runs the interaction with the user.</div><div class="ttdef"><b>Definition:</b> Interaction.cpp:69</div></div>
 <div class="ttc" id="aclass_trie_html"><div class="ttname"><a href="class_trie.html">Trie</a></div><div class="ttdef"><b>Definition:</b> Trie.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->

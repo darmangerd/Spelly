@@ -10,9 +10,12 @@ string Interaction::check(string &word, Trie &t, Correction &c) {
     auto candidates = c.findCandidates(word);
     auto found = t.search(word);
     int maxWords = 4;
+    bool noCorrect = false;
+    bool noSuggest = false;
     auto suggestions = t.autocomplete(word, maxWords);
 
     // Correction
+    cout << endl << "Correcting: \"" << word << "\"..." << endl;
     unsigned int minCandidate = min(maxWords, int(candidates.size()));
 
     if (found == nullptr) {
@@ -24,6 +27,7 @@ string Interaction::check(string &word, Trie &t, Correction &c) {
     } else {
         cout << "No correction for: \"" << word << "\", this word is correct" << endl;
         minCandidate = 0;
+        noCorrect = true;
     }
 
     // Autocomplete
@@ -39,9 +43,14 @@ string Interaction::check(string &word, Trie &t, Correction &c) {
 
     if (countAutocomplete <= 0) {
         cout << "No autocompletion available for the word: \"" << word << "\"..." << endl;
+        noSuggest = true;
     }
 
     cout << endl;
+
+    if (noCorrect && noSuggest) {
+        return "";
+    }
 
     // Get user input for correction/autocomplete
     unsigned int index = 0;
@@ -77,12 +86,17 @@ string Interaction::run(Trie &t, Correction &c) {
         cout << "Enter a word to check: ";
         cin >> word;
         if (word != QUIT_KEY) {
-            text += check(word, t, c);
-            text += " ";
+            word = check(word, t, c);
+            if (word.empty()){
+                cout << endl << "There is no corrections or suggestions for this word" << endl;
+            } else {
+                text += word;
+                text += " ";
+            }
         } else {
             break;
         }
     }
 
-    return text + ".";
+    return text;
 }
