@@ -48,3 +48,16 @@ $ doxygen .doxygen
 ```
 
 > A git commit hook hook is setup to build the documentation at each commit
+
+# Conventions
+## Code
+| Class name        | PascalCase |
+|-------------------|------------|
+| Private attribute | camelCase_ |
+| Methods           | camelCase  |
+| Variables         | camelCase  |
+
+## Git commits
+Your git commit message have to look like this, with an explicit description and a simple subject:
+- `subject(Description)`
+- `subject(Description) & other_subject(Description)`
